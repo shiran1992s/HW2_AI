@@ -34,6 +34,7 @@ class MiniMax(SearchAlgos):
         :return: A tuple: (The min max algorithm value, The direction in case of max node or None in min mode)
         """
         #TODO: erase the following line and implement this function.
+
         if player.check_time():
             player.time_ended = True
         if player.time_ended:
@@ -43,17 +44,17 @@ class MiniMax(SearchAlgos):
         if depth == 0:
             return player.heuristic(state, maximizing_player)
 
-        self_moves_tuple, rival_moves_tuple = MinimaxPlayer.available_moves_handler(state, state.location,
+        self_moves_tuple, rival_moves_tuple = player.available_moves_handler(state, state.location,
                                                                                     state.rival_location)
 
-        moves = self_moves_tuple[1] if maximizing_player else rival_moves_tuple[1]
+        moves = self_moves_tuple[0] if maximizing_player else rival_moves_tuple[0]
         max_result = float("-inf")
         min_result = float("inf")
         selected_move = None
         for move in moves:
-            state.set_move(move, maximizing_player)
+            state.make_move(move, maximizing_player)
             move_value = self.search(state, not maximizing_player, depth - 1)
-            state.reset_move(move, maximizing_player)
+            state.undo_move(move, maximizing_player)
             if maximizing_player and max_result < move_value:
                 max_result = move_value
                 selected_move = move

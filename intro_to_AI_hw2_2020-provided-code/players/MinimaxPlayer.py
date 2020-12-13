@@ -6,6 +6,51 @@ from players.AbstractPlayer import AbstractPlayer
 import time
 import utils
 
+
+#TODO: Check if need instance of player and handle fruits
+class GameState:
+    player = None
+    game_board = None
+    location = None
+    rival_location = None
+    fruits_location = dict()
+
+    def __init__(self, game_board, location, rival_location, fruits_location, player):
+        self.player = player
+        self.game_board = game_board
+        self.location = location
+        self.rival_location = rival_location
+        self.fruits_location = fruits_location
+
+    def make_move(self, move, maximizing_player):
+        if maximizing_player:
+            self.game_board[self.location[0]][self.location[1]] = -1
+            self.location = (self.location[0] + move[0], self.location[1] + move[1])
+            cell_value = self.game_board[self.location[0]][self.location[1]]
+            self.player.eat_fruit(cell_value, self.location)
+            self.game_board[self.location[0]][self.location[1]] = 1
+        else:
+            self.game_board[self.rival_location[0]][self.rival_location[1]] = -1
+            self.rival_location = (self.rival_location[0] + move[0], self.rival_location[1] + move[1])
+            cell_value = self.game_board[self.rival_location[0]][self.rival_location[1]]
+            self.player.eat_fruit(cell_value, self.rival_location)
+            self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
+
+    def undo_move(self, move, maximizing_player):
+        if maximizing_player:
+            self.game_board[self.location[0]][self.location[1]] = 0
+            self.location = (self.location[0] - move[0], self.location[1] - move[1])
+            cell_value = self.game_board[self.location[0]][self.location[1]]
+            self.player.eat_fruit(cell_value, self.location)
+            self.game_board[self.location[0]][self.location[1]] = 1
+        else:
+            self.game_board[self.rival_location[0]][self.rival_location[1]] = 0
+            self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
+            cell_value = self.game_board[self.rival_location[0]][self.rival_location[1]]
+            self.player.eat_fruit(cell_value, self.rival_location)
+            self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
+
+
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
@@ -40,8 +85,8 @@ class Player(AbstractPlayer):
         # TODO: Check if need to update the fruit locations in here or only players.
         self.game_board = board
         # number_of_players = 2
-        for row_index, row_value in board:
-            for cell_index, cell_value in row_value:
+        for row_index, row_value in enumerate(board):
+            for cell_index, cell_value in enumerate(row_value):
                 if cell_value == 1:
                     self.location = (row_index, cell_index)
                     # number_of_players -= 1
@@ -106,6 +151,12 @@ class Player(AbstractPlayer):
         if best_value >= self.best_fruit_value:
             self.best_fruit_value = best_value
             self.best_fruit_location = best_location
+
+    def eat_fruit(self, cell_value, position):
+        if cell_value > 2:
+            self.fruit_locations.pop(position)
+            if cell_value == self.best_fruit_value:
+                self.find_best_fruit()
 
     def check_time(self):
         return time.time() - self.start_time > self.time_limit - 0.01
