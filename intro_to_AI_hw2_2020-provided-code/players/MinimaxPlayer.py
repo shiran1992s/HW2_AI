@@ -79,7 +79,6 @@ class Player(AbstractPlayer):
         self.fruits_concentration = None
         self.init_concentration_dict()
 
-
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -88,7 +87,7 @@ class Player(AbstractPlayer):
             - board: np.array, a 2D matrix of the board.
         No output is expected.
         """
-        #TODO: erase the following line and implement this function.
+        # TODO: erase the following line and implement this function.
 
         # TODO: Check if need to update the fruit locations in here or only players.
         self.game_board = board
@@ -125,7 +124,6 @@ class Player(AbstractPlayer):
         """
         #TODO: erase the following line and implement this function.
 
-
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.
         input:
@@ -142,7 +140,6 @@ class Player(AbstractPlayer):
                 self.find_best_fruit()
         self.game_board[pos[0]][pos[1]] = 2
         self.rival_location = pos
-
 
     def update_fruits(self, fruits_on_board_dict):
         """Update your info on the current fruits on board (if needed).
@@ -166,9 +163,8 @@ class Player(AbstractPlayer):
 
         self.fruit_locations = fruits_on_board_dict
 
-
     ########## helper functions in class ##########
-    #TODO: add here helper functions in class, if needed
+    # TODO: add here helper functions in class, if needed
 
     # calculate manhattan distance
     def manhattan_distance(self, first_location, second_location):
@@ -188,7 +184,6 @@ class Player(AbstractPlayer):
             return -1
         else:
             return 4 - num_steps_available
-
 
     def init_concentration_dict(self):
 
