@@ -74,7 +74,7 @@ class Player(AbstractPlayer):
             - direction: tuple, specifing the Player's movement, chosen from self.directions
         """
         #TODO: erase the following line and implement this function.
-        raise NotImplementedError
+        #TODO: define alfa=-np.inf, beta=np.inf and use them................
 
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.
