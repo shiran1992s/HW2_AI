@@ -78,6 +78,7 @@ class Player(AbstractPlayer):
         self.min_dimention = None #TODO: IF NOT USED REMOVE ITS FOR FRUITS_LIFE_TIME
         self.fruits_concentration = None
         self.init_concentration_dict()
+        self.directions = [(1,0), (0,1), (-1,0), (0,-1)]
 
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
@@ -123,6 +124,48 @@ class Player(AbstractPlayer):
             - direction: tuple, specifing the Player's movement, chosen from self.directions
         """
         #TODO: erase the following line and implement this function.
+        start_time = time.time()
+        num_of_rows = len(self.game_board)
+        num_of_cols = len(self.game_board[0])
+        board_size = num_of_rows * num_of_cols
+        deep = 0
+        while True: # Do while
+            start_it_time = time.time()
+            deep += 1
+            max_score_move = None
+            max_score = -np.inf
+            for d in self.directions:
+                row = self.location[0] + d[0]
+                col = self.location[1] + d[1]
+                if 0 <= row < num_of_rows and 0 <= col < num_of_cols and \
+                        self.game_board[row][col] != -1 and self.game_board[row][col] != 2:
+                    loc = (row, col)
+                    score =
+                    if score > max_score
+                        max_score = score
+                        max_score_move = d
+            it_time = time.time() - start_it_time
+            next_it_time = 4 * it_time #Im not sure that is the right calculation (5)
+            total_time = time.time() - start_time
+
+            if total_time + next_it_time >= time_limit or deep > board_size/2:
+                break
+
+        if max_score_move is None:
+            exit()
+
+        return max_score_move
+
+
+
+
+
+
+
+
+
+
+
 
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.
