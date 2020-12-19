@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850c1bca-4f96-4bfb-8e35-54dc77ded2e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,7 +63,21 @@
       <option name="project" value="LOCAL" />
       <updated>1608060344910</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="may alfa_beta start">
+      <created>1608060956839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608060956839</updated>
+    </task>
+    <task id="LOCAL-00003" summary="make move">
+      <created>1608284816217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608284816217</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,7 +94,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="may" />
-    <option name="LAST_COMMIT_MESSAGE" value="may" />
+    <MESSAGE value="may alfa_beta start" />
+    <MESSAGE value="make move" />
+    <option name="LAST_COMMIT_MESSAGE" value="make move" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607702696851">
@@ -89,10 +107,10 @@
       <screen x="0" y="23" width="1440" height="804" />
     </state>
     <state x="481" y="152" key="RollbackChangesDialog/0.23.1440.804@0.23.1440.804" timestamp="1607701805016" />
-    <state x="503" y="79" width="900" height="722" key="SettingsEditor" timestamp="1607979454817">
+    <state x="503" y="79" width="900" height="722" key="SettingsEditor" timestamp="1608278184677">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="503" y="79" width="900" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1607979454817" />
+    <state x="503" y="79" width="900" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1608278184677" />
     <state x="221" y="64" key="SettingsEditor/0.23.1440.804@0.23.1440.804" timestamp="1607702859185" />
     <state x="0" y="190" key="Vcs.Push.Dialog.v2" timestamp="1608058047385">
       <screen x="0" y="0" width="1440" height="900" />
@@ -102,9 +120,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1607979881341" />
-    <state x="385" y="151" width="670" height="676" key="search.everywhere.popup" timestamp="1607702565984">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup" timestamp="1608395330547">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1608395330547" />
     <state x="385" y="151" width="670" height="676" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1607702565984" />
   </component>
 </project>
