@@ -130,14 +130,18 @@ class Player(AbstractPlayer):
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
         depth = 0
+        """
         max_score_move = None
         max_score = -np.inf
+        """
         self.game_board[self.location] = -1
-
+        move = None
         while True: # Do while
             start_it_time = time.time()
             depth += 1
-
+            if depth != 1:
+                self.game_board[self.location + move] = move_score
+            """
             for d in self.directions:
                 row = self.location[0] + d[0]
                 col = self.location[1] + d[1]
@@ -145,7 +149,7 @@ class Player(AbstractPlayer):
                         self.game_board[row][col] != -1 and self.game_board[row][col] != 2:
                     loc = (row, col)
                     temp_state = GameState(self.game_board,self.location,self.rival_location,self.fruit_locations)
-                    score = SearchAlgos.MiniMax.search(self, temp_state, depth, ?player?) #?????
+                    score, = MiniMax.search(self, temp_state, depth, True)
                     if score > max_score:
                         if max_score != -np.inf:
                             self.game_board[self.location + max_score_move] = loc_score
@@ -153,20 +157,27 @@ class Player(AbstractPlayer):
                         max_score_move = d
                         loc_score = self.game_board[self.location + max_score_move]
                         self.game_board[self.location + max_score_move] = 1
+            """
+
+            t_state = {self.game_board, self.location, self, self.rival_location}
+            # state: {game_board, location, player, rival_location}
+            move_minimax_value, move = MiniMax.search(self, t_state, depth, True)
+            move_score = self.game_board[self.location + move_score]
+            self.game_board[self.location + move] = 1
 
             it_time = time.time() - start_it_time
             if depth == 1:
                 first_it_time = it_time
-            next_it_time = first_it_time + 4 * it_time #Im not sure that this is the right calculation (5)
+            next_it_time = first_it_time + 4 * it_time # Im not sure that this is the right calculation (5)
             total_time = time.time() - start_time
             if total_time + next_it_time >= time_limit or depth > board_size/2:
                 break
 
 
-        if max_score_move is None:
+        if move is None:
             exit()
 
-        return max_score_move
+        return move
 
 
 
