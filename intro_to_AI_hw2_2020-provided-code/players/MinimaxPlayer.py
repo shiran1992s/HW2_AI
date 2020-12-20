@@ -81,6 +81,7 @@ class Player(AbstractPlayer):
         self.init_concentration_dict()
         self.directions = [(1,0), (0,1), (-1,0), (0,-1)]
 
+
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -176,19 +177,9 @@ class Player(AbstractPlayer):
 
         if move is None:
             exit()
+        self.location = self.location + move
 
         return move
-
-
-
-
-
-
-
-
-
-
-
 
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.
@@ -396,4 +387,3 @@ class Player(AbstractPlayer):
         if self.self_moves_tuple[1] >= 1:
             return 1
         return -1
-
