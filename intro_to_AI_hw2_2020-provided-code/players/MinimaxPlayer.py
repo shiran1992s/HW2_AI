@@ -141,7 +141,7 @@ class Player(AbstractPlayer):
         board_size = num_of_rows * num_of_cols
         depth = 0
         current_game_state = GameState(self.game_board, self.location, self.rival_location, self)
-        available_moves = self.get_moves_from_location(current_game_state, True)
+        available_moves = get_moves_from_location(current_game_state, True)
         move = None
         #depth_limit_from_current_state = self.(self.)
 
@@ -260,23 +260,11 @@ class Player(AbstractPlayer):
     ########## helper functions in class ##########
     # TODO: add here helper functions in class, if needed
 
-    def get_moves_from_location(self, state, maximizing_player):
-        current_location = state.location if maximizing_player else state.rival_location
-        board = state.game_board
-        available_moves = []
-        directions = utils.get_directions()
-        for d in directions:
-            current_i = current_location[0] + d[0]
-            current_j = current_location[1] + d[1]
 
-            if 0 <= current_i < len(board) and 0 <= current_j < len(board[0]) and board[current_i][current_j] not in [-1, 1, 2]:
-                available_moves.append((current_i, current_j))
-
-        return available_moves
 
     # calculate manhattan distance
     def manhattan_distance(self, first_location, second_location):
-        return sum(abs(e1 - e2) for e1, e2 in zip(first_location, second_location))
+        return abs(first_location[0] - second_location[0]) + abs(first_location[1] - second_location[1])
 
     def state_score(self, board, pos):
         num_steps_available = 0
@@ -351,8 +339,12 @@ class Player(AbstractPlayer):
 
         fruits_concentration = self.fruits_concentration
 
-        player_bestfruit_manhattan_dist = self.manhattan_distance(state.location, state.player.best_fruit_location)
-        rival_bestfruit_manhattan_dist = self.manhattan_distance(state.rival_location, state.player.best_fruit_location)
+        if self.best_fruit_location is not None:
+            player_bestfruit_manhattan_dist = self.manhattan_distance(state.location, state.player.best_fruit_location)
+            rival_bestfruit_manhattan_dist = self.manhattan_distance(state.rival_location, state.player.best_fruit_location)
+        else:
+            player_bestfruit_manhattan_dist = 0
+            rival_bestfruit_manhattan_dist = 0
 
 
         # player_row_location, player_col_location,\
@@ -362,52 +354,7 @@ class Player(AbstractPlayer):
         return total_free_cells, fruits_locations_value, fruits_concentration, player_bestfruit_manhattan_dist,\
                rival_bestfruit_manhattan_dist
 
-    def heuristic(self, state):
-        ''' Calculating the player's and the rival's moves locations and count '''
-        self_moves_tuple, rival_moves_tuple = available_moves_handler(state, state.location, state.rival_location)
-        player_moves, player_moves_number = self_moves_tuple[0], self_moves_tuple[1]
-        rival_moves, rival_moves_number = rival_moves_tuple[0], rival_moves_tuple[1]
 
-        ''' Calculating board parameters
-            1) Total number of available cells
-            2) Dictionary of fruit location -> fruit value
-            3) Fruits concentration on the board
-            4) Manhattan distance between player and the fruit with the highest value
-            5) Manhattan distance between rival and the fruit with the highest value
-            '''
-        total_free_cells, fruits_locations_value, fruits_concentration, player_bestfruit_manhattan_dist, \
-        rival_bestfruit_manhattan_dist = self.board_handler(state)
-
-        ''' Calculating the quarter with the highest concentration'''
-        quarter_with_highest_concentration = max(fruits_concentration, key=fruits_concentration.get)
-
-        ''' Calculating the moves that will block some of the rival moves'''
-        blocking_moves = [move for move in player_moves if move in rival_moves]
-
-        ''' Calculating the locations of Player and Rival according 
-        to the quarter with the highest concentration'''
-        player_quarter = self.location_in_quarter(self.location)
-        rival_quarter = self.location_in_quarter(self.rival_location)
-
-        player_quarter_is_best = player_quarter == quarter_with_highest_concentration
-        rival_quarter_is_best = rival_quarter == quarter_with_highest_concentration
-        ''' Calculating the moves that the successor will be able to do'''
-        successor_available_moves = [move for move in player_moves if self.number_of_legal_cells_from_location(move) > 1]
-
-        ''' Calculating the location score like in simple player'''
-        player_location_score = self.state_score(board=self.board, pos=state.location)
-        rival_location_score = self.state_score(board=self.board, pos=state.rival_location)
-
-        ''' Calculating the board size'''
-        board_size = len(self.board) * len(self.board[0])
-
-        value = (2 * player_moves_number) - (3 * rival_moves_number) \
-                + len(blocking_moves) + len(successor_available_moves) \
-                + player_location_score - (2 * rival_location_score) \
-                + player_bestfruit_manhattan_dist - rival_bestfruit_manhattan_dist \
-                + (3 * player_quarter_is_best) - (4 * rival_quarter_is_best)
-
-        return value
     def find_best_fruit(self):
         best_location = max(self.fruit_locations, key=self.fruit_locations.get)
         best_value = self.fruit_locations[best_location]
@@ -425,7 +372,7 @@ class Player(AbstractPlayer):
             if maximizing_player:
                 self.points += cell_value
             else:
-                self.rival_points -= cell_value
+                self.rival_points += cell_value
 
 
     def cancel_eat_fruit(self, cell_value, position, maximizing_player):
@@ -436,7 +383,7 @@ class Player(AbstractPlayer):
                 self.find_best_fruit()
 
             if maximizing_player:
-                self.points += cell_value
+                self.points -= cell_value
             else:
                 self.rival_points -= cell_value
 
@@ -493,3 +440,64 @@ def available_moves_handler(state, location, rival_location):
     rival_moves_tuple = (rival_available_moves, rival_available_moves_count)
 
     return self_moves_tuple, rival_moves_tuple
+
+def get_moves_from_location(state, maximizing_player):
+    current_location = state.location if maximizing_player else state.rival_location
+    board = state.game_board
+    available_moves = []
+    directions = utils.get_directions()
+    for d in directions:
+        current_i = current_location[0] + d[0]
+        current_j = current_location[1] + d[1]
+
+        if 0 <= current_i < len(board) and 0 <= current_j < len(board[0]) and board[current_i][current_j] not in [-1, 1, 2]:
+            available_moves.append((d[0], d[1]))
+
+    return available_moves
+
+def heuristic(state):
+    ''' Calculating the player's and the rival's moves locations and count '''
+    self_moves_tuple, rival_moves_tuple = available_moves_handler(state, state.location, state.rival_location)
+    player_moves, player_moves_number = self_moves_tuple[0], self_moves_tuple[1]
+    rival_moves, rival_moves_number = rival_moves_tuple[0], rival_moves_tuple[1]
+
+    ''' Calculating board parameters
+        1) Total number of available cells
+        2) Dictionary of fruit location -> fruit value
+        3) Fruits concentration on the board
+        4) Manhattan distance between player and the fruit with the highest value
+        5) Manhattan distance between rival and the fruit with the highest value
+        '''
+    total_free_cells, fruits_locations_value, fruits_concentration, player_bestfruit_manhattan_dist, \
+    rival_bestfruit_manhattan_dist = state.player.board_handler(state)
+
+    ''' Calculating the quarter with the highest concentration'''
+    quarter_with_highest_concentration = max(fruits_concentration, key=fruits_concentration.get)
+
+    ''' Calculating the moves that will block some of the rival moves'''
+    blocking_moves = [move for move in player_moves if move in rival_moves]
+
+    ''' Calculating the locations of Player and Rival according 
+    to the quarter with the highest concentration'''
+    player_quarter = state.player.location_in_quarter(state.location)
+    rival_quarter = state.player.location_in_quarter(state.rival_location)
+
+    player_quarter_is_best = player_quarter == quarter_with_highest_concentration
+    rival_quarter_is_best = rival_quarter == quarter_with_highest_concentration
+    ''' Calculating the moves that the successor will be able to do'''
+    successor_available_moves = [move for move in player_moves if state.player.number_of_legal_cells_from_location(move) > 1]
+
+    ''' Calculating the location score like in simple player'''
+    player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
+    rival_location_score = state.player.state_score(board=state.game_board, pos=state.rival_location)
+
+    ''' Calculating the board size'''
+    board_size = len(state.game_board) * len(state.game_board[0])
+
+    value = (2 * player_moves_number) - (3 * rival_moves_number) \
+            + len(blocking_moves) + len(successor_available_moves) \
+            + player_location_score - (2 * rival_location_score) \
+            + player_bestfruit_manhattan_dist - rival_bestfruit_manhattan_dist \
+            + (3 * player_quarter_is_best) - (4 * rival_quarter_is_best)
+
+    return value

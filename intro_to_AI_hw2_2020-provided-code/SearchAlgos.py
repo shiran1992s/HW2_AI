@@ -43,16 +43,14 @@ class MiniMax(SearchAlgos):
         if self.goal(state):
             return self.utility(state)
         if depth == 0:
-            return MinimaxPlayer.Player.heuristic(state, maximizing_player)
+            return MinimaxPlayer.heuristic(state)
 
-        self_moves_tuple, rival_moves_tuple = MinimaxPlayer.available_moves_handler(state, state.location,
-                                                                                    state.rival_location)
-
-        moves = self_moves_tuple[0] if maximizing_player else rival_moves_tuple[0]
+        available_moves = MinimaxPlayer.get_moves_from_location(state,
+                                                                                    maximizing_player)
         max_result = float("-inf")
         min_result = float("inf")
         selected_move = None
-        for move in moves:
+        for move in available_moves:
             state.make_move(move, maximizing_player)
             move_value = self.search(state, not maximizing_player, depth - 1)
             state.undo_move(move, maximizing_player)
