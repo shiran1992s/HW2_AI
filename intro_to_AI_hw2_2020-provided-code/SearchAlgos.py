@@ -2,8 +2,9 @@
 """
 from utils import ALPHA_VALUE_INIT, BETA_VALUE_INIT
 #TODO: you can import more modules, if needed
-import MinimaxPlayer
-from MinimaxPlayer import Player as player
+
+from players import MinimaxPlayer
+
 
 class SearchAlgos:
     def __init__(self, utility, succ, perform_move, goal):
@@ -35,16 +36,16 @@ class MiniMax(SearchAlgos):
         """
         #TODO: erase the following line and implement this function.
 
-        if player.check_time():
-            player.time_ended = True
-        if player.time_ended:
-            return -1
-        if self.goal(state, maximizing_player):
+        # if MinimaxPlayer.Player.check_time():
+        #     MinimaxPlayer.Player.time_ended = True
+        # if MinimaxPlayer.Player.time_ended:
+        #     return -1
+        if self.goal(state):
             return self.utility(state)
         if depth == 0:
-            return player.heuristic(state, maximizing_player)
+            return MinimaxPlayer.Player.heuristic(state, maximizing_player)
 
-        self_moves_tuple, rival_moves_tuple = player.available_moves_handler(state, state.location,
+        self_moves_tuple, rival_moves_tuple = MinimaxPlayer.available_moves_handler(state, state.location,
                                                                                     state.rival_location)
 
         moves = self_moves_tuple[0] if maximizing_player else rival_moves_tuple[0]
