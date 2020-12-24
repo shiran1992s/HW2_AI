@@ -5,6 +5,7 @@ from players.AbstractPlayer import AbstractPlayer
 #TODO: you can import more modules, if needed
 import time
 import utils
+import SearchAlgos
 
 
 #TODO: Check if need instance of player and handle fruits
@@ -78,6 +79,7 @@ class Player(AbstractPlayer):
         self.min_dimention = None #TODO: IF NOT USED REMOVE ITS FOR FRUITS_LIFE_TIME
         self.fruits_concentration = None
         self.init_concentration_dict()
+        self.directions = [(1,0), (0,1), (-1,0), (0,-1)]
 
 
     def set_game_params(self, board):
@@ -88,7 +90,7 @@ class Player(AbstractPlayer):
             - board: np.array, a 2D matrix of the board.
         No output is expected.
         """
-        #TODO: erase the following line and implement this function.
+        # TODO: erase the following line and implement this function.
 
         # TODO: Check if need to update the fruit locations in here or only players.
         self.game_board = board
@@ -124,7 +126,60 @@ class Player(AbstractPlayer):
             - direction: tuple, specifing the Player's movement, chosen from self.directions
         """
         #TODO: erase the following line and implement this function.
+        start_time = time.time()
+        num_of_rows = len(self.game_board)
+        num_of_cols = len(self.game_board[0])
+        board_size = num_of_rows * num_of_cols
+        depth = 0
+        """
+        max_score_move = None
+        max_score = -np.inf
+        """
+        self.game_board[self.location] = -1
+        move = None
+        while True: # Do while
+            start_it_time = time.time()
+            depth += 1
+            if depth != 1:
+                self.game_board[self.location + move] = move_score
+            """
+            for d in self.directions:
+                row = self.location[0] + d[0]
+                col = self.location[1] + d[1]
+                if 0 <= row < num_of_rows and 0 <= col < num_of_cols and \
+                        self.game_board[row][col] != -1 and self.game_board[row][col] != 2:
+                    loc = (row, col)
+                    temp_state = GameState(self.game_board,self.location,self.rival_location,self.fruit_locations)
+                    score, = MiniMax.search(self, temp_state, depth, True)
+                    if score > max_score:
+                        if max_score != -np.inf:
+                            self.game_board[self.location + max_score_move] = loc_score
+                        max_score = score
+                        max_score_move = d
+                        loc_score = self.game_board[self.location + max_score_move]
+                        self.game_board[self.location + max_score_move] = 1
+            """
 
+            t_state = {self.game_board, self.location, self, self.rival_location}
+            # state: {game_board, location, player, rival_location}
+            move_minimax_value, move = MiniMax.search(self, t_state, depth, True)
+            move_score = self.game_board[self.location + move_score]
+            self.game_board[self.location + move] = 1
+
+            it_time = time.time() - start_it_time
+            if depth == 1:
+                first_it_time = it_time
+            next_it_time = first_it_time + 4 * it_time # Im not sure that this is the right calculation (5)
+            total_time = time.time() - start_time
+            if total_time + next_it_time >= time_limit or depth > board_size/2:
+                break
+
+
+        if move is None:
+            exit()
+        self.location = self.location + move
+
+        return move
 
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.
@@ -142,7 +197,6 @@ class Player(AbstractPlayer):
                 self.find_best_fruit()
         self.game_board[pos[0]][pos[1]] = 2
         self.rival_location = pos
-
 
     def update_fruits(self, fruits_on_board_dict):
         """Update your info on the current fruits on board (if needed).
@@ -166,9 +220,8 @@ class Player(AbstractPlayer):
 
         self.fruit_locations = fruits_on_board_dict
 
-
     ########## helper functions in class ##########
-    #TODO: add here helper functions in class, if needed
+    # TODO: add here helper functions in class, if needed
 
     # calculate manhattan distance
     def manhattan_distance(self, first_location, second_location):
@@ -188,7 +241,6 @@ class Player(AbstractPlayer):
             return -1
         else:
             return 4 - num_steps_available
-
 
     def init_concentration_dict(self):
 
@@ -335,4 +387,3 @@ class Player(AbstractPlayer):
         if self.self_moves_tuple[1] >= 1:
             return 1
         return -1
-
