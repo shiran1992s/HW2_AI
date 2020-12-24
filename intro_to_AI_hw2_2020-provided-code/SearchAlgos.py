@@ -41,24 +41,23 @@ class MiniMax(SearchAlgos):
         # if MinimaxPlayer.Player.time_ended:
         #     return -1
         if self.goal(state):
-            return self.utility(state)
+            return self.utility(state), None
         if depth == 0:
-            return MinimaxPlayer.heuristic(state)
+            return MinimaxPlayer.heuristic(state), None
 
-        available_moves = MinimaxPlayer.get_moves_from_location(state,
-                                                                                    maximizing_player)
+        available_moves = MinimaxPlayer.get_moves_from_location(state, maximizing_player)
         max_result = float("-inf")
         min_result = float("inf")
         selected_move = None
         for move in available_moves:
             state.make_move(move, maximizing_player)
-            move_value = self.search(state, not maximizing_player, depth - 1)
+            move_value = self.search(state, depth - 1, not maximizing_player)
             state.undo_move(move, maximizing_player)
-            if maximizing_player and max_result < move_value:
-                max_result = move_value
+            if maximizing_player and max_result < move_value[0]:
+                max_result = move_value[0]
                 selected_move = move
-            elif not maximizing_player and min_result > move_value:
-                min_result = move_value
+            elif not maximizing_player and min_result > move_value[0]:
+                min_result = move_value[0]
 
         if maximizing_player:
             return max_result, selected_move

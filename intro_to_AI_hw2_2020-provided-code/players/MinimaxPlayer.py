@@ -53,17 +53,18 @@ class GameState:
     def undo_move(self, move, maximizing_player):
         if maximizing_player:
             self.game_board[self.location[0]][self.location[1]] = self.last_cell_value_player
-            self.location = (self.location[0] - move[0], self.location[1] - move[1])
             self.fruit_life_time += 1
             self.player.cancel_eat_fruit(self.last_cell_value_player, self.location, maximizing_player)
+            # self.game_board[self.location[0]][self.location[1]] = 0
+            self.location = (self.location[0] - move[0], self.location[1] - move[1])
             self.game_board[self.location[0]][self.location[1]] = 1
+
         else:
             self.game_board[self.rival_location[0]][self.rival_location[1]] = self.last_cell_value_rival
-            self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
             self.player.cancel_eat_fruit(self.last_cell_value_rival, self.rival_location, maximizing_player)
+            # self.game_board[self.rival_location[0]][self.rival_location[1]] = 0
+            self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
             self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
-
-
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
@@ -173,6 +174,8 @@ class Player(AbstractPlayer):
             exit()
         self.location = current_game_state.location
         self.fruit_life_time -= 1
+        if self.fruit_life_time == 0:
+            self.fruit_locations = None
         return move
 
     # def make_move(self, time_limit, players_score):
@@ -264,7 +267,9 @@ class Player(AbstractPlayer):
 
     # calculate manhattan distance
     def manhattan_distance(self, first_location, second_location):
-        return abs(first_location[0] - second_location[0]) + abs(first_location[1] - second_location[1])
+        if first_location is not None and second_location is not None:
+            return abs(first_location[0] - second_location[0]) + abs(first_location[1] - second_location[1])
+        return 0
 
     def state_score(self, board, pos):
         num_steps_available = 0
@@ -356,12 +361,13 @@ class Player(AbstractPlayer):
 
 
     def find_best_fruit(self):
-        best_location = max(self.fruit_locations, key=self.fruit_locations.get)
-        best_value = self.fruit_locations[best_location]
+        if self.fruit_locations is not None and len(self.fruit_locations) > 0:
+            best_location = max(self.fruit_locations, key=self.fruit_locations.get)
+            best_value = self.fruit_locations[best_location]
 
-        if best_value >= self.best_fruit_value:
-            self.best_fruit_value = best_value
-            self.best_fruit_location = best_location
+            if best_value >= self.best_fruit_value:
+                self.best_fruit_value = best_value
+                self.best_fruit_location = best_location
 
     def eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
@@ -394,19 +400,21 @@ class Player(AbstractPlayer):
 #TODO: very basic need to consider fruits positions and values
     def utility(self, current_state):
 
-        # self_moves_tuple, rival_moves_tuple = self.available_moves_handler(current_state.location,
-        #                                                                     current_state.rival_location)
-        return self.points - self.rival_points
-        """
-        if self_moves_tuple[1] is 0 or self.rival_moves_tuple[1] is 0:
-
-            if self.points > self.rival_points:
-                return se
-            if self.points < self.rival_points:
-
-            return 1
+        self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
+                                                                      current_state.rival_location)
+        if self_moves_tuple[1] is 0 or rival_moves_tuple[1] is 0:
+            if self_moves_tuple[1] > 0:
+                if self.points >= self.rival_points:
+                    return 10
+                else:
+                    return 5
+            else:
+                if self.points >= self.rival_points:
+                    return -10
+                else:
+                    return -30
         return -1
-        """
+
 
     def is_goal(self, current_state):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
@@ -477,6 +485,20 @@ def heuristic(state):
     ''' Calculating the moves that will block some of the rival moves'''
     blocking_moves = [move for move in player_moves if move in rival_moves]
 
+    ''' Calculating the moves that will take fruits'''
+    player_moves_with_fruits = [move for move in player_moves if move in fruits_locations_value.keys()]
+    rival_moves_with_fruits = [move for move in rival_moves if move in fruits_locations_value.keys()]
+
+    ''' Calculating the total points from moves with fruits'''
+    player_moves_with_fruits_points, rival_moves_with_fruits_points = 0, 0
+    if len(player_moves_with_fruits) > 0:
+        player_moves_with_fruits_points = sum([fruits_locations_value[move] for move in player_moves_with_fruits])\
+                                      / len(player_moves_with_fruits)
+    if len(rival_moves_with_fruits) > 0:
+        rival_moves_with_fruits_points = sum([fruits_locations_value[move] for move in rival_moves_with_fruits])\
+                                     / len(rival_moves_with_fruits)
+
+
     ''' Calculating the locations of Player and Rival according 
     to the quarter with the highest concentration'''
     player_quarter = state.player.location_in_quarter(state.location)
@@ -487,6 +509,11 @@ def heuristic(state):
     ''' Calculating the moves that the successor will be able to do'''
     successor_available_moves = [move for move in player_moves if state.player.number_of_legal_cells_from_location(move) > 1]
 
+    ''' Calculating the Manhattan distance between successor available moves and the fruit with the highest value'''
+    succs_moves_manhattan_dists = get_manhattan_dists_for_succ(successor_available_moves, state)
+    moves_avg_value = 0
+    if len(succs_moves_manhattan_dists) > 0:
+        moves_avg_value = sum(succs_moves_manhattan_dists.values())/len(succs_moves_manhattan_dists)
     ''' Calculating the location score like in simple player'''
     player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
     rival_location_score = state.player.state_score(board=state.game_board, pos=state.rival_location)
@@ -494,10 +521,18 @@ def heuristic(state):
     ''' Calculating the board size'''
     board_size = len(state.game_board) * len(state.game_board[0])
 
-    value = (2 * player_moves_number) - (3 * rival_moves_number) \
-            + len(blocking_moves) + len(successor_available_moves) \
-            + player_location_score - (2 * rival_location_score) \
-            + player_bestfruit_manhattan_dist - rival_bestfruit_manhattan_dist \
-            + (3 * player_quarter_is_best) - (4 * rival_quarter_is_best)
-
+    value = (1 * player_moves_number) - (0.8 * rival_moves_number) \
+            + (len(blocking_moves) / 2) + (1.2 * len(successor_available_moves)) \
+            + player_location_score - (1.2 * rival_location_score) \
+            + player_bestfruit_manhattan_dist - 1.2 * rival_bestfruit_manhattan_dist \
+            + (0.2 * player_quarter_is_best) - (0.4 * rival_quarter_is_best) + (0.3 * moves_avg_value) \
+            + (0.4 * player_moves_with_fruits_points) - (0.2 * rival_moves_with_fruits_points)
     return value
+
+def get_manhattan_dists_for_succ(succ_moves, state):
+    dists = dict()
+    for move in succ_moves:
+        manhattan_val = state.player.manhattan_distance(move, state.player.best_fruit_location)
+        dists.update({move: manhattan_val})
+
+    return dists
