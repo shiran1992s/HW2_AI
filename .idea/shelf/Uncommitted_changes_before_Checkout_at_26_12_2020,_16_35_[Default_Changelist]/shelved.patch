@@ -1,0 +1,430 @@
+Index: .idea/HW2.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/intro_to_AI_hw2_2020-provided-code\" isTestSource=\"false\" />\n    </content>\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.7 (4)\" jdkType=\"Python SDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/HW2.iml	(revision 15572e7643e01a9b8df5466d1f72ea106e6d2652)
++++ .idea/HW2.iml	(date 1608885059591)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <sourceFolder url="file://$MODULE_DIR$/intro_to_AI_hw2_2020-provided-code" isTestSource="false" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.7 (4)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.7 (AI-1 2)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"JavaScriptSettings\">\n    <option name=\"languageLevel\" value=\"ES6\" />\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.7 (4)\" project-jdk-type=\"Python SDK\" />\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision 15572e7643e01a9b8df5466d1f72ea106e6d2652)
++++ .idea/misc.xml	(date 1608885059608)
+@@ -3,5 +3,5 @@
+   <component name="JavaScriptSettings">
+     <option name="languageLevel" value="ES6" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (4)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.7 (AI-1 2)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"850c1bca-4f96-4bfb-8e35-54dc77ded2e6\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/HW2.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/HW2.iml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code.zip\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code.zip\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/SimplePlayer.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/SimplePlayer.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"EXCLUDED_CONVERTED_TO_IGNORED\" value=\"true\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CoverageDataManager\">\n    <SUITE FILE_PATH=\"coverage/HW2$MinimaxPlayer_vs_LivePlayer.coverage\" NAME=\"MinimaxPlayer vs LivePlayer Coverage Results\" MODIFIED=\"1608819692754\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code\" />\n    <SUITE FILE_PATH=\"coverage/HW2$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1608812956383\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code\" />\n  </component>\n  <component name=\"FileEditorManager\">\n    <splitter split-orientation=\"horizontal\" split-proportion=\"0.5\">\n      <split-first>\n        <leaf>\n          <file pinned=\"false\" current-in-tab=\"false\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\n                <state relative-caret-position=\"1010\">\n                  <caret line=\"80\" selection-start-line=\"80\" selection-end-line=\"80\" />\n                  <folding>\n                    <element signature=\"e#0#15#0\" expanded=\"true\" />\n                  </folding>\n                </state>\n              </provider>\n            </entry>\n          </file>\n          <file pinned=\"false\" current-in-tab=\"false\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\n                <state relative-caret-position=\"186\">\n                  <caret line=\"54\" selection-start-line=\"54\" selection-end-line=\"54\" />\n                </state>\n              </provider>\n            </entry>\n          </file>\n          <file pinned=\"false\" current-in-tab=\"true\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\n                <state relative-caret-position=\"7890\">\n                  <caret line=\"367\" selection-start-line=\"367\" selection-end-line=\"367\" />\n                  <folding>\n                    <element signature=\"e#23#72#0\" expanded=\"true\" />\n                    <element signature=\"e#8337#8985#0\" />\n                    <element signature=\"e#9046#10104#0\" />\n                    <element signature=\"e#10907#11127#0\" />\n                    <element signature=\"e#11190#12118#0\" />\n                    <element signature=\"e#12173#12731#0\" />\n                    <element signature=\"e#15728#16005#0\" />\n                  </folding>\n                </state>\n              </provider>\n            </entry>\n          </file>\n          <file pinned=\"false\" current-in-tab=\"false\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\" />\n            </entry>\n          </file>\n          <file pinned=\"false\" current-in-tab=\"false\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\n                <state relative-caret-position=\"366\">\n                  <caret line=\"62\" selection-start-line=\"62\" selection-end-line=\"62\" />\n                  <folding>\n                    <element signature=\"e#40#91#0\" expanded=\"true\" />\n                  </folding>\n                </state>\n              </provider>\n            </entry>\n          </file>\n        </leaf>\n      </split-first>\n      <split-second>\n        <leaf>\n          <file pinned=\"false\" current-in-tab=\"true\">\n            <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\">\n              <provider selected=\"true\" editor-type-id=\"text-editor\">\n                <state relative-caret-position=\"276\">\n                  <caret line=\"45\" column=\"48\" selection-start-line=\"45\" selection-start-column=\"48\" selection-end-line=\"45\" selection-end-column=\"48\" />\n                  <folding>\n                    <element signature=\"e#40#91#0\" expanded=\"true\" />\n                  </folding>\n                </state>\n              </provider>\n            </entry>\n          </file>\n        </leaf>\n      </split-second>\n    </splitter>\n  </component>\n  <component name=\"FindInProjectRecents\">\n    <findStrings>\n      <find>number_of_legal_cells_from_location</find>\n      <find>directions</find>\n      <find>min_dimention</find>\n      <find>fruit_locations_life_time</find>\n      <find>available_moves_handler</find>\n      <find>get_moves_from_location</find>\n      <find>manhattan_distance</find>\n    </findStrings>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"IdeDocumentHistory\">\n    <option name=\"CHANGED_PATHS\">\n      <list>\n        <option value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\" />\n        <option value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectFrameBounds\" extendedState=\"6\">\n    <option name=\"x\" value=\"345\" />\n    <option name=\"y\" value=\"426\" />\n    <option name=\"width\" value=\"1440\" />\n    <option name=\"height\" value=\"810\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1lW0IVbLAc7eXBur7ncjaGNTb93\" />\n  <component name=\"ProjectView\">\n    <navigator proportions=\"\" version=\"1\">\n      <foldersAlwaysOnTop value=\"true\" />\n    </navigator>\n    <panes>\n      <pane id=\"ProjectPane\">\n        <subPane>\n          <expand>\n            <path>\n              <item name=\"HW2\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"HW2\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"HW2\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"HW2\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"intro_to_AI_hw2_2020-provided-code\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"HW2\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"HW2\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"intro_to_AI_hw2_2020-provided-code\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\".idea\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"HW2\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"HW2\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"intro_to_AI_hw2_2020-provided-code\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"boards\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n            <path>\n              <item name=\"HW2\" type=\"b2602c69:ProjectViewProjectNode\" />\n              <item name=\"HW2\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"intro_to_AI_hw2_2020-provided-code\" type=\"462c0819:PsiDirectoryNode\" />\n              <item name=\"players\" type=\"462c0819:PsiDirectoryNode\" />\n            </path>\n          </expand>\n          <select />\n        </subPane>\n      </pane>\n      <pane id=\"Scope\" />\n    </panes>\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\n  </component>\n  <component name=\"PyConsoleOptionsProvider\">\n    <option name=\"myPythonConsoleState\">\n      <console-settings module-name=\"HW2\" is-module-sdk=\"true\">\n        <option name=\"myUseModuleSdk\" value=\"true\" />\n        <option name=\"myModuleName\" value=\"HW2\" />\n      </console-settings>\n    </option>\n  </component>\n  <component name=\"RunDashboard\">\n    <option name=\"ruleStates\">\n      <list>\n        <RuleState>\n          <option name=\"name\" value=\"ConfigurationTypeDashboardGroupingRule\" />\n        </RuleState>\n        <RuleState>\n          <option name=\"name\" value=\"StatusDashboardGroupingRule\" />\n        </RuleState>\n      </list>\n    </option>\n  </component>\n  <component name=\"RunManager\" selected=\"Python.MinimaxPlayer vs LivePlayer\">\n    <configuration name=\"MinimaxPlayer vs LivePlayer\" type=\"PythonConfigurationType\" factoryName=\"Python\">\n      <module name=\"HW2\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\shira\\Anaconda3\\python.exe\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\" />\n      <option name=\"PARAMETERS\" value=\"-player1 MinimaxPlayer -player2 LivePlayer -terminal_viz\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" nameIsGenerated=\"true\">\n      <module name=\"HW2\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <envs>\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\n      </envs>\n      <option name=\"SDK_HOME\" value=\"C:\\Users\\shira\\miniconda3\\envs\\cs236781-tutorials\\python.exe\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code\" />\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\n      <EXTENSION ID=\"PythonCoverageRunConfigurationExtension\" runner=\"coverage.py\" />\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\n      <option name=\"MODULE_MODE\" value=\"false\" />\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\n      <option name=\"INPUT_FILE\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Python.main\" />\n      <item itemvalue=\"Python.MinimaxPlayer vs LivePlayer\" />\n    </list>\n  </component>\n  <component name=\"SpellCheckerSettings\" BundledDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" Dictionaries=\"0\" CorrectionsLimit=\"5\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" />\n  <component name=\"SvnConfiguration\">\n    <configuration />\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"850c1bca-4f96-4bfb-8e35-54dc77ded2e6\" name=\"Default Changelist\" comment=\"\" />\n      <created>1607697461366</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1607697461366</updated>\n      <workItem from=\"1608797750472\" duration=\"20442000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"may\">\n      <created>1608060344910</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608060344910</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"may alfa_beta start\">\n      <created>1608060956839</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608060956839</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"make move\">\n      <created>1608284816217</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608284816217</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"make move2\">\n      <created>1608402488679</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608402488681</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"make move3\">\n      <created>1608457884730</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608457884730</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"further work on the minimax\">\n      <created>1608813882499</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1608813882500</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"7\" />\n    <servers />\n  </component>\n  <component name=\"TimeTrackingManager\">\n    <option name=\"totallyTimeSpent\" value=\"20442000\" />\n  </component>\n  <component name=\"TodoView\">\n    <todo-panel id=\"selected-file\">\n      <is-autoscroll-to-source value=\"true\" />\n    </todo-panel>\n    <todo-panel id=\"all\">\n      <are-packages-shown value=\"true\" />\n      <is-autoscroll-to-source value=\"true\" />\n    </todo-panel>\n  </component>\n  <component name=\"ToolWindowManager\">\n    <frame x=\"-8\" y=\"-8\" width=\"1936\" height=\"1056\" extended-state=\"6\" />\n    <editor active=\"true\" />\n    <layout>\n      <window_info id=\"Favorites\" side_tool=\"true\" />\n      <window_info content_ui=\"combo\" id=\"Project\" order=\"0\" visible=\"true\" weight=\"0.20842217\" />\n      <window_info id=\"Structure\" order=\"1\" side_tool=\"true\" weight=\"0.25\" />\n      <window_info anchor=\"bottom\" id=\"Docker\" show_stripe_button=\"false\" />\n      <window_info anchor=\"bottom\" id=\"Database Changes\" />\n      <window_info anchor=\"bottom\" id=\"Version Control\" />\n      <window_info anchor=\"bottom\" id=\"Python Console\" weight=\"0.32936078\" />\n      <window_info anchor=\"bottom\" id=\"Terminal\" weight=\"0.32936078\" />\n      <window_info anchor=\"bottom\" id=\"Event Log\" side_tool=\"true\" />\n      <window_info anchor=\"bottom\" id=\"Message\" order=\"0\" />\n      <window_info anchor=\"bottom\" id=\"Find\" order=\"1\" weight=\"0.32936078\" />\n      <window_info anchor=\"bottom\" id=\"Run\" order=\"2\" />\n      <window_info active=\"true\" anchor=\"bottom\" id=\"Debug\" order=\"3\" visible=\"true\" weight=\"0.34127843\" />\n      <window_info anchor=\"bottom\" id=\"Cvs\" order=\"4\" weight=\"0.25\" />\n      <window_info anchor=\"bottom\" id=\"Inspection\" order=\"5\" weight=\"0.4\" />\n      <window_info anchor=\"bottom\" id=\"TODO\" order=\"6\" weight=\"0.32936078\" />\n      <window_info anchor=\"right\" id=\"SciView\" />\n      <window_info anchor=\"right\" id=\"Database\" />\n      <window_info anchor=\"right\" id=\"Commander\" internal_type=\"SLIDING\" order=\"0\" type=\"SLIDING\" weight=\"0.4\" />\n      <window_info anchor=\"right\" id=\"Ant Build\" order=\"1\" weight=\"0.25\" />\n      <window_info anchor=\"right\" content_ui=\"combo\" id=\"Hierarchy\" order=\"2\" weight=\"0.25\" />\n    </layout>\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"1\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"RECENTLY_FILTERED_USER_GROUPS\">\n                <collection />\n              </option>\n              <option name=\"RECENTLY_FILTERED_BRANCH_GROUPS\">\n                <collection />\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"RECENT_FILTERS\">\n      <map>\n        <entry key=\"Branch\">\n          <value>\n            <list />\n          </value>\n        </entry>\n        <entry key=\"User\">\n          <value>\n            <list />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"may\" />\n    <MESSAGE value=\"may alfa_beta start\" />\n    <MESSAGE value=\"make move\" />\n    <MESSAGE value=\"make move2\" />\n    <MESSAGE value=\"make move3\" />\n    <MESSAGE value=\"further work on the minimax\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"further work on the minimax\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"184\" y=\"87\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1607702696851\">\n      <screen x=\"0\" y=\"23\" width=\"1440\" height=\"804\" />\n    </state>\n    <state x=\"184\" y=\"87\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.804@0.23.1440.804\" timestamp=\"1607702696851\" />\n    <state x=\"481\" y=\"152\" key=\"RollbackChangesDialog\" timestamp=\"1607701805016\">\n      <screen x=\"0\" y=\"23\" width=\"1440\" height=\"804\" />\n    </state>\n    <state x=\"481\" y=\"152\" key=\"RollbackChangesDialog/0.23.1440.804@0.23.1440.804\" timestamp=\"1607701805016\" />\n    <state x=\"503\" y=\"79\" width=\"900\" height=\"722\" key=\"SettingsEditor\" timestamp=\"1608278184677\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"503\" y=\"79\" width=\"900\" height=\"722\" key=\"SettingsEditor/0.0.1440.900@0.0.1440.900\" timestamp=\"1608278184677\" />\n    <state x=\"221\" y=\"64\" key=\"SettingsEditor/0.23.1440.804@0.23.1440.804\" timestamp=\"1607702859185\" />\n    <state x=\"0\" y=\"190\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1608058047385\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"0\" y=\"190\" key=\"Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900\" timestamp=\"1608058047385\" />\n    <state x=\"468\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1607979881341\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"468\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900\" timestamp=\"1607979881341\" />\n    <state x=\"385\" y=\"143\" width=\"670\" height=\"757\" key=\"search.everywhere.popup\" timestamp=\"1608395330547\">\n      <screen x=\"0\" y=\"0\" width=\"1440\" height=\"900\" />\n    </state>\n    <state x=\"385\" y=\"143\" width=\"670\" height=\"757\" key=\"search.everywhere.popup/0.0.1440.900@0.0.1440.900\" timestamp=\"1608395330547\" />\n    <state x=\"385\" y=\"151\" width=\"670\" height=\"676\" key=\"search.everywhere.popup/0.23.1440.804@0.23.1440.804\" timestamp=\"1607702565984\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py</url>\n          <line>52</line>\n          <option name=\"timeStamp\" value=\"2\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>40</line>\n          <option name=\"timeStamp\" value=\"4\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>24</line>\n          <option name=\"timeStamp\" value=\"5\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>266</line>\n          <option name=\"timeStamp\" value=\"6\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>326</line>\n          <option name=\"timeStamp\" value=\"7\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>339</line>\n          <option name=\"timeStamp\" value=\"8\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>366</line>\n          <option name=\"timeStamp\" value=\"9\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>378</line>\n          <option name=\"timeStamp\" value=\"10\" />\n        </line-breakpoint>\n        <line-breakpoint enabled=\"true\" suspend=\"THREAD\" type=\"python-line\">\n          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>\n          <line>33</line>\n          <option name=\"timeStamp\" value=\"11\" />\n        </line-breakpoint>\n      </breakpoints>\n    </breakpoint-manager>\n    <watches-manager>\n      <configuration name=\"PythonConfigurationType\">\n        <watch expression=\"msg\" />\n      </configuration>\n    </watches-manager>\n  </component>\n  <component name=\"editorHistoryManager\">\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"-8469\">\n          <folding>\n            <element signature=\"e#0#31#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$USER_HOME$/miniconda3/envs/cs236781-tutorials/Lib/site-packages/numpy/core/__init__.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"321\">\n          <caret line=\"50\" selection-start-line=\"50\" selection-end-line=\"50\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$USER_HOME$/miniconda3/envs/cs236781-hw/Lib/site-packages/numpy/core/__init__.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"194\">\n          <caret line=\"50\" selection-start-line=\"50\" selection-end-line=\"50\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$USER_HOME$/Anaconda3/Lib/codecs.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"254\">\n          <caret line=\"310\" selection-start-line=\"310\" selection-end-line=\"310\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\" />\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"186\">\n          <caret line=\"54\" selection-start-line=\"54\" selection-end-line=\"54\" />\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"1010\">\n          <caret line=\"80\" selection-start-line=\"80\" selection-end-line=\"80\" />\n          <folding>\n            <element signature=\"e#0#15#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"366\">\n          <caret line=\"62\" selection-start-line=\"62\" selection-end-line=\"62\" />\n          <folding>\n            <element signature=\"e#40#91#0\" expanded=\"true\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n    <entry file=\"file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py\">\n      <provider selected=\"true\" editor-type-id=\"text-editor\">\n        <state relative-caret-position=\"7890\">\n          <caret line=\"367\" selection-start-line=\"367\" selection-end-line=\"367\" />\n          <folding>\n            <element signature=\"e#23#72#0\" expanded=\"true\" />\n            <element signature=\"e#8337#8985#0\" />\n            <element signature=\"e#9046#10104#0\" />\n            <element signature=\"e#10907#11127#0\" />\n            <element signature=\"e#11190#12118#0\" />\n            <element signature=\"e#12173#12731#0\" />\n            <element signature=\"e#15728#16005#0\" />\n          </folding>\n        </state>\n      </provider>\n    </entry>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 15572e7643e01a9b8df5466d1f72ea106e6d2652)
++++ .idea/workspace.xml	(date 1608993235875)
+@@ -23,16 +23,7 @@
+       <change beforePath="$PROJECT_DIR$/.idea/HW2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW2.iml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code.zip" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/SimplePlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/SimplePlayer.py" afterDir="false" />
+     </list>
+-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -41,86 +32,6 @@
+   <component name="CoverageDataManager">
+     <SUITE FILE_PATH="coverage/HW2$MinimaxPlayer_vs_LivePlayer.coverage" NAME="MinimaxPlayer vs LivePlayer Coverage Results" MODIFIED="1608819692754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
+     <SUITE FILE_PATH="coverage/HW2$main.coverage" NAME="main Coverage Results" MODIFIED="1608812956383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
+-  </component>
+-  <component name="FileEditorManager">
+-    <splitter split-orientation="horizontal" split-proportion="0.5">
+-      <split-first>
+-        <leaf>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="1010">
+-                  <caret line="80" selection-start-line="80" selection-end-line="80" />
+-                  <folding>
+-                    <element signature="e#0#15#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="186">
+-                  <caret line="54" selection-start-line="54" selection-end-line="54" />
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="true">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="7890">
+-                  <caret line="367" selection-start-line="367" selection-end-line="367" />
+-                  <folding>
+-                    <element signature="e#23#72#0" expanded="true" />
+-                    <element signature="e#8337#8985#0" />
+-                    <element signature="e#9046#10104#0" />
+-                    <element signature="e#10907#11127#0" />
+-                    <element signature="e#11190#12118#0" />
+-                    <element signature="e#12173#12731#0" />
+-                    <element signature="e#15728#16005#0" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py">
+-              <provider selected="true" editor-type-id="text-editor" />
+-            </entry>
+-          </file>
+-          <file pinned="false" current-in-tab="false">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="366">
+-                  <caret line="62" selection-start-line="62" selection-end-line="62" />
+-                  <folding>
+-                    <element signature="e#40#91#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-        </leaf>
+-      </split-first>
+-      <split-second>
+-        <leaf>
+-          <file pinned="false" current-in-tab="true">
+-            <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py">
+-              <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="276">
+-                  <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+-                  <folding>
+-                    <element signature="e#40#91#0" expanded="true" />
+-                  </folding>
+-                </state>
+-              </provider>
+-            </entry>
+-          </file>
+-        </leaf>
+-      </split-second>
+-    </splitter>
+   </component>
+   <component name="FindInProjectRecents">
+     <findStrings>
+@@ -141,63 +52,7 @@
+       </map>
+     </option>
+   </component>
+-  <component name="IdeDocumentHistory">
+-    <option name="CHANGED_PATHS">
+-      <list>
+-        <option value="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py" />
+-        <option value="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectFrameBounds" extendedState="6">
+-    <option name="x" value="345" />
+-    <option name="y" value="426" />
+-    <option name="width" value="1440" />
+-    <option name="height" value="810" />
+-  </component>
+   <component name="ProjectId" id="1lW0IVbLAc7eXBur7ncjaGNTb93" />
+-  <component name="ProjectView">
+-    <navigator proportions="" version="1">
+-      <foldersAlwaysOnTop value="true" />
+-    </navigator>
+-    <panes>
+-      <pane id="ProjectPane">
+-        <subPane>
+-          <expand>
+-            <path>
+-              <item name="HW2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="HW2" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="HW2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="HW2" type="462c0819:PsiDirectoryNode" />
+-              <item name="intro_to_AI_hw2_2020-provided-code" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="HW2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="HW2" type="462c0819:PsiDirectoryNode" />
+-              <item name="intro_to_AI_hw2_2020-provided-code" type="462c0819:PsiDirectoryNode" />
+-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="HW2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="HW2" type="462c0819:PsiDirectoryNode" />
+-              <item name="intro_to_AI_hw2_2020-provided-code" type="462c0819:PsiDirectoryNode" />
+-              <item name="boards" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-            <path>
+-              <item name="HW2" type="b2602c69:ProjectViewProjectNode" />
+-              <item name="HW2" type="462c0819:PsiDirectoryNode" />
+-              <item name="intro_to_AI_hw2_2020-provided-code" type="462c0819:PsiDirectoryNode" />
+-              <item name="players" type="462c0819:PsiDirectoryNode" />
+-            </path>
+-          </expand>
+-          <select />
+-        </subPane>
+-      </pane>
+-      <pane id="Scope" />
+-    </panes>
+-  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -207,7 +62,7 @@
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="last_opened_file_path" value="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" />
+-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
++    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+   </component>
+   <component name="PyConsoleOptionsProvider">
+     <option name="myPythonConsoleState">
+@@ -215,18 +70,6 @@
+         <option name="myUseModuleSdk" value="true" />
+         <option name="myModuleName" value="HW2" />
+       </console-settings>
+-    </option>
+-  </component>
+-  <component name="RunDashboard">
+-    <option name="ruleStates">
+-      <list>
+-        <RuleState>
+-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+-        </RuleState>
+-        <RuleState>
+-          <option name="name" value="StatusDashboardGroupingRule" />
+-        </RuleState>
+-      </list>
+     </option>
+   </component>
+   <component name="RunManager" selected="Python.MinimaxPlayer vs LivePlayer">
+@@ -279,9 +122,9 @@
+       <item itemvalue="Python.MinimaxPlayer vs LivePlayer" />
+     </list>
+   </component>
+-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="SvnConfiguration">
+-    <configuration />
++    <configuration>$USER_HOME$/.subversion</configuration>
+   </component>
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -349,33 +192,6 @@
+       <is-autoscroll-to-source value="true" />
+     </todo-panel>
+   </component>
+-  <component name="ToolWindowManager">
+-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+-    <editor active="true" />
+-    <layout>
+-      <window_info id="Favorites" side_tool="true" />
+-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20842217" />
+-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+-      <window_info anchor="bottom" id="Database Changes" />
+-      <window_info anchor="bottom" id="Version Control" />
+-      <window_info anchor="bottom" id="Python Console" weight="0.32936078" />
+-      <window_info anchor="bottom" id="Terminal" weight="0.32936078" />
+-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+-      <window_info anchor="bottom" id="Message" order="0" />
+-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+-      <window_info anchor="bottom" id="Run" order="2" />
+-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34127843" />
+-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
+-      <window_info anchor="right" id="SciView" />
+-      <window_info anchor="right" id="Database" />
+-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+-    </layout>
+-  </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="1" />
+   </component>
+@@ -384,14 +200,7 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="RECENTLY_FILTERED_USER_GROUPS">
+-                <collection />
+-              </option>
+-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+-                <collection />
+-              </option>
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+@@ -410,6 +219,7 @@
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="may" />
+@@ -421,19 +231,30 @@
+     <option name="LAST_COMMIT_MESSAGE" value="further work on the minimax" />
+   </component>
+   <component name="WindowStateProjectService">
++    <state x="354" y="135" key="#Inspections" timestamp="1608887270661">
++      <screen x="0" y="0" width="1440" height="900" />
++    </state>
++    <state x="354" y="135" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1608887270661" />
+     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607702696851">
+       <screen x="0" y="23" width="1440" height="804" />
+     </state>
+     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.804@0.23.1440.804" timestamp="1607702696851" />
+-    <state x="481" y="152" key="RollbackChangesDialog" timestamp="1607701805016">
+-      <screen x="0" y="23" width="1440" height="804" />
++    <state x="508" y="197" key="FileChooserDialogImpl" timestamp="1608884946221">
++      <screen x="0" y="23" width="1440" height="825" />
++    </state>
++    <state x="508" y="197" key="FileChooserDialogImpl/0.23.1440.825@0.23.1440.825" timestamp="1608884946221" />
++    <state x="481" y="144" key="RollbackChangesDialog" timestamp="1608993125711">
++      <screen x="0" y="0" width="1440" height="900" />
+     </state>
++    <state x="481" y="144" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1608993125711" />
+     <state x="481" y="152" key="RollbackChangesDialog/0.23.1440.804@0.23.1440.804" timestamp="1607701805016" />
+-    <state x="503" y="79" width="900" height="722" key="SettingsEditor" timestamp="1608278184677">
++    <state x="503" y="79" width="900" height="722" key="SettingsEditor" timestamp="1608993235509">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+-    <state x="503" y="79" width="900" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1608278184677" />
++    <state x="503" y="79" width="900" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1608993235509" />
+     <state x="221" y="64" key="SettingsEditor/0.23.1440.804@0.23.1440.804" timestamp="1607702859185" />
++    <state x="174" y="115" width="900" height="722" key="SettingsEditor/0.23.1440.823@0.23.1440.823" timestamp="1608885637842" />
++    <state x="174" y="115" width="900" height="722" key="SettingsEditor/0.23.1440.825@0.23.1440.825" timestamp="1608885568853" />
+     <state x="0" y="190" key="Vcs.Push.Dialog.v2" timestamp="1608058047385">
+       <screen x="0" y="0" width="1440" height="900" />
+     </state>
+@@ -504,82 +325,4 @@
+       </configuration>
+     </watches-manager>
+   </component>
+-  <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/Game.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="-8469">
+-          <folding>
+-            <element signature="e#0#31#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$USER_HOME$/miniconda3/envs/cs236781-tutorials/Lib/site-packages/numpy/core/__init__.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="321">
+-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$USER_HOME$/miniconda3/envs/cs236781-hw/Lib/site-packages/numpy/core/__init__.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="194">
+-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$USER_HOME$/Anaconda3/Lib/codecs.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="254">
+-          <caret line="310" selection-start-line="310" selection-end-line="310" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py">
+-      <provider selected="true" editor-type-id="text-editor" />
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/GameWrapper.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="186">
+-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="1010">
+-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+-          <folding>
+-            <element signature="e#0#15#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="366">
+-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+-          <folding>
+-            <element signature="e#40#91#0" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="7890">
+-          <caret line="367" selection-start-line="367" selection-end-line="367" />
+-          <folding>
+-            <element signature="e#23#72#0" expanded="true" />
+-            <element signature="e#8337#8985#0" />
+-            <element signature="e#9046#10104#0" />
+-            <element signature="e#10907#11127#0" />
+-            <element signature="e#11190#12118#0" />
+-            <element signature="e#12173#12731#0" />
+-            <element signature="e#15728#16005#0" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+-  </component>
+ </project>
+\ No newline at end of file
