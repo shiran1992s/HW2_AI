@@ -587,13 +587,18 @@ def heuristic(state):
         if state.fruit_life_time > 0:
             player_distances_from_fruits = dict()
             for move in player_moves:
-                temp_distances_list = [manhattan_distance(move, fruit_location) for fruit_location in state.fruit_locations
+                # TODO: change the avg to weighted avg by the value of each fruit
+                temp_distances_list = [manhattan_distance(move, fruit_location)
+                                       for fruit_location in state.fruit_locations
                                        if manhattan_distance(move, fruit_location) <= state.fruit_life_time / 2]
                 if temp_distances_list is not None and len(temp_distances_list) > 0:
                     player_distances_from_fruits.update({tuple(temp_distances_list): sum(temp_distances_list)
                                                                               / len(temp_distances_list)})
 
-            avg_distances = sum(player_distances_from_fruits.values()) / len(player_distances_from_fruits)
+            if len(player_distances_from_fruits) == 0: #TODO: think how to fix
+                avg_distances = 0
+            else:
+                avg_distances = sum(player_distances_from_fruits.values()) / len(player_distances_from_fruits)
 
             succ_distances_from_fruits = dict()
             for move in successor_available_moves:
@@ -602,7 +607,13 @@ def heuristic(state):
                 if temp_distances_list is not None and len(temp_distances_list) > 0:
                     succ_distances_from_fruits.update({tuple(temp_distances_list): sum(temp_distances_list)
                                                                               / len(temp_distances_list)})
-            succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
+
+            # succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
+            if len(succ_distances_from_fruits) == 0:
+                succ_avg_distances = 0
+            else:
+                succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
+
 
     ''' Calculating the location score like in simple player'''
     player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
@@ -614,7 +625,7 @@ def heuristic(state):
     value = None
     if total_free_cells / board_size <= 0.5:
         if state.fruit_life_time > 0:
-            value = 5 * state.points + 4 * player_moves_with_fruits_points - avg_distances * 3 - succ_avg_distances * 2
+            value = 5 * state.points + 4 * player_moves_with_fruits_points - 3 * avg_distances - 2 * succ_avg_distances
 
             # value = 3 * player_bestfruit_manhattan_dist - 1 * rival_bestfruit_manhattan_dist \
             #         + (3.5 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (9 * moves_avg_value) \
@@ -631,7 +642,8 @@ def heuristic(state):
             #         + (3.5 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (9 * moves_avg_value) \
             #         + (7 * player_moves_with_fruits_points) - (2 * rival_moves_with_fruits_points)
 
-            value = 5 * state.points + 4 * player_moves_with_fruits_points - avg_distances * 3 - succ_avg_distances * 2
+            # value = 5 * state.points + 4 * player_moves_with_fruits_points - avg_distances * 3 - succ_avg_distances * 2
+            value = 5 * state.points
 
     else:
         if state.fruit_life_time > 0:
@@ -647,7 +659,9 @@ def heuristic(state):
             #         + (3 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (2 * moves_avg_value) \
             #         + (3 * player_moves_with_fruits_points) - (1.5 * rival_moves_with_fruits_points) \
             #         + player_location_score - rival_location_score
-            value = 7 * state.points + 5 * player_moves_with_fruits_points - avg_distances * 5 - succ_avg_distances * 3
+
+            # value = 7 * state.points + 5 * player_moves_with_fruits_points - avg_distances * 5 - succ_avg_distances * 3
+            value = 7 * state.points
 
             # value = 3 * player_bestfruit_manhattan_dist - 1 * rival_bestfruit_manhattan_dist \
             #         + (3.5 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (12 * moves_avg_value) \
