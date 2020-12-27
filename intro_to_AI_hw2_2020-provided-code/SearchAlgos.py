@@ -41,27 +41,42 @@ class MiniMax(SearchAlgos):
         # if MinimaxPlayer.Player.time_ended:
         #     return -1
         if self.goal(state):
-            return self.utility(state), None
+            val = self.utility(state), None
+            # print(f'In Goal State ,maximizing_player={maximizing_player}, Utility value is:{val}\n')
+            return val
         if depth == 0:
-            return MinimaxPlayer.heuristic(state), None
+            val = MinimaxPlayer.heuristic(state), None
+            # print(f'In Depth 0 ,maximizing_player={maximizing_player}, Heuristic value is:{val}\n')
+            return val
 
         available_moves = MinimaxPlayer.get_moves_from_location(state, maximizing_player)
         max_result = float("-inf")
         min_result = float("inf")
         selected_move = None
+        # print(f'In Depth = {depth} ,maximizing_player={maximizing_player}, available_moves:{available_moves}\n')
         for move in available_moves:
+            # print(f'In Depth = {depth} ,maximizing_player={maximizing_player}, player making move:{move}\n')
             state.make_move(move, maximizing_player)
             move_value = self.search(state, depth - 1, not maximizing_player)
             state.undo_move(move, maximizing_player)
+            # print(f'In Depth = {depth} ,maximizing_player={maximizing_player}, player undoing move:{move}\n')
             if maximizing_player and max_result < move_value[0]:
+                # print(f'In Depth = {depth} ,maximizing_player={maximizing_player},\n'
+                #       f'new max value is:{move_value[0]} and selected move is:{move}\n')
                 max_result = move_value[0]
                 selected_move = move
             elif not maximizing_player and min_result > move_value[0]:
+                # print(f'In Depth = {depth} ,maximizing_player={maximizing_player},\n'
+                #       f'new min value is:{move_value[0]} and selected move is None\n')
                 min_result = move_value[0]
 
         if maximizing_player:
+            # print(f'In Depth = {depth} ,maximizing_player={maximizing_player},\n'
+            #       f'The selected max value is:{max_result} and selected move is:{selected_move}\n')
             return max_result, selected_move
         else:
+            # print(f'In Depth = {depth} ,maximizing_player={maximizing_player},\n'
+            #       f'The selected min value is:{min_result} and selected move is None\n')
             return min_result, None
 
 
