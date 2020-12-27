@@ -121,7 +121,8 @@ class GameState:
                 if self.fruits_state is not None and len(self.fruits_state) > 0:
                     self.restore_fruits(self.fruits_state.pop())
             # elif self.fruit_life_time > 0:
-            self.fruit_life_time += 1
+            else:
+                self.fruit_life_time += 1
 
     def eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
@@ -165,6 +166,11 @@ class GameState:
             self.best_fruit_value = fruit_state.best_fruit_value
             self.fruits_concentration = fruit_state.fruits_concentration
 
+        if self.fruit_locations is not None and len(self.fruit_locations) > 0:
+            fruit_positions = self.fruit_locations.keys()
+            for pos in fruit_positions:
+                if self.game_board[pos[0], pos[1]] == 0:
+                    self.game_board[pos[0], pos[1]] = self.fruit_locations[pos]
 
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
@@ -286,11 +292,11 @@ class Player(AbstractPlayer):
             #     break
             # if depth == 8:
             #     break
-            if total_time + next_it_time + total_update_time >= time_limit or depth > board_size / 2:
+            if total_time + next_it_time + total_update_time >= time_limit or depth > board_size:
                 break
             best_move_chosen = max(result_values, key=result_values.get)
-            print(f'\n\n\nIn Depth = {depth} ,maximizing_player={True},\n'
-                  f'minmaxValue:{result_values} and the best move chosen is:{best_move_chosen}\n\n\n')
+            # print(f'\n\n\nIn Depth = {depth} ,maximizing_player={True},\n'
+            #       f'minmaxValue:{result_values} and the best move chosen is:{best_move_chosen}\n\n\n')
 
         current_game_state.make_move(best_move_chosen, True)
         sync_objects(self, current_game_state)
@@ -586,7 +592,8 @@ def heuristic(state):
                 if temp_distances_list is not None and len(temp_distances_list) > 0:
                     player_distances_from_fruits.update({tuple(temp_distances_list): sum(temp_distances_list)
                                                                               / len(temp_distances_list)})
-                    avg_distances = sum(player_distances_from_fruits.values()) / len(player_distances_from_fruits)
+
+            avg_distances = sum(player_distances_from_fruits.values()) / len(player_distances_from_fruits)
 
             succ_distances_from_fruits = dict()
             for move in successor_available_moves:
@@ -595,7 +602,7 @@ def heuristic(state):
                 if temp_distances_list is not None and len(temp_distances_list) > 0:
                     succ_distances_from_fruits.update({tuple(temp_distances_list): sum(temp_distances_list)
                                                                               / len(temp_distances_list)})
-                    succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
+            succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
 
     ''' Calculating the location score like in simple player'''
     player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
