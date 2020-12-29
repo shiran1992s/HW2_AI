@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850c1bca-4f96-4bfb-8e35-54dc77ded2e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HW2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" afterDir="false" />
@@ -251,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608990937489</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="old">
+      <created>1609071265515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1609071265515</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -307,7 +312,8 @@
     <MESSAGE value="further work on the minimax phase 4" />
     <MESSAGE value="minimax second solution version" />
     <MESSAGE value="minimax further progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="minimax further progress" />
+    <MESSAGE value="old" />
+    <option name="LAST_COMMIT_MESSAGE" value="old" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609068631920">
@@ -315,26 +321,54 @@
     </state>
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1609068631920" />
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.804@0.23.1440.804" timestamp="1609056723734" />
+    <state width="556" height="466" key="DebuggerActiveHint" timestamp="1609161422515">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="556" height="466" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1609161422515" />
     <state x="508" y="212" key="FileChooserDialogImpl" timestamp="1609066612748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="212" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1609066612748" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609069241799">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609276162738">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609069241799" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609069241796">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609276162738" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609276162736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609069241796" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609069241794">
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609276162736" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609276162735">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609069241794" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609069241798">
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609276162735" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609276162737">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609069241798" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609276162737" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609270855988">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609270855988" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1609268634456" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1609161067575" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1609270855986">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609270855986" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1609268634455" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1609161067573" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1609270855985">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609270855985" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1609268634454" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1609161067572" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1609270855987">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609270855987" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1609268634455" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1609161067574" />
     <state x="481" y="152" key="RollbackChangesDialog" timestamp="1609056723734" />
     <state x="481" y="152" key="RollbackChangesDialog/0.23.1440.804@0.23.1440.804" timestamp="1609056723734" />
     <state x="197" y="178" width="1243" height="722" key="SettingsEditor" timestamp="1609068273924">
@@ -350,25 +384,24 @@
     <state x="418" y="82" width="604" height="735" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1609067750005" />
     <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1609056723734" />
     <state x="468" y="170" key="git4idea.branch.GitSmartOperationDialog/0.0.1440.900@0.0.1440.900" timestamp="1609056723734" />
-    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup" timestamp="1609058606680">
+    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup" timestamp="1609274460951">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609058606680" />
+    <state x="385" y="143" width="670" height="757" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1609274460951" />
     <state x="385" y="151" width="670" height="676" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1609056723734" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <condition expression="len(available_moves) == 0" language="Python" />
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>258</line>
-          <option name="timeStamp" value="66" />
+          <line>377</line>
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>374</line>
-          <option name="timeStamp" value="67" />
+          <line>280</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -376,68 +409,8 @@
       <configuration name="PythonConfigurationType">
         <watch expression="msg" />
         <watch expression="second_object.game_board" />
+        <watch expression="self.fruit_locations" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="breakpointCondition">
-      <expression>
-        <expression-string>depth == 3</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>len(available_moves) == 0</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>cell_value &gt; 2 and position not in self.fruit_locations</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>cell_value &gt; 2 and position not in</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>cell_value &gt; 2 and</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>selected_move == None</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.location[0] == 4 and self.location[1] == 0 and cell_value &gt; 0.0</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.location[0] == 4 and self.location[1] == 0 and</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.location[0] == 4 and self.location[1] == 0</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="watch">
-      <expression>
-        <expression-string>rival_moves_tuple</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self_moves_tuple</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>
