@@ -256,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609071265515</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="heuristic">
+      <created>1609278410951</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609278410951</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -313,7 +320,8 @@
     <MESSAGE value="minimax second solution version" />
     <MESSAGE value="minimax further progress" />
     <MESSAGE value="old" />
-    <option name="LAST_COMMIT_MESSAGE" value="old" />
+    <MESSAGE value="heuristic" />
+    <option name="LAST_COMMIT_MESSAGE" value="heuristic" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609068631920">
@@ -329,45 +337,45 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="212" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1609066612748" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609276162738">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609363955644">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609276162738" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609276162736">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609363955644" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609363955642">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609276162736" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609276162735">
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609363955642" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609363955641">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609276162735" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609276162737">
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609363955641" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609363955643">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609276162737" />
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609270855988">
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609363955643" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609362591855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609270855988" />
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1609268634456" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609362591855" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1609361894531" />
     <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1609161067575" />
-    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1609270855986">
+    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1609362591853">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609270855986" />
-    <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1609268634455" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609362591853" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1609361894530" />
     <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1609161067573" />
-    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1609270855985">
+    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1609362591852">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609270855985" />
-    <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1609268634454" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609362591852" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1609361894529" />
     <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1609161067572" />
-    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1609270855987">
+    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1609362591854">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609270855987" />
-    <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1609268634455" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609362591854" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1609361894531" />
     <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1609161067574" />
     <state x="481" y="152" key="RollbackChangesDialog" timestamp="1609056723734" />
     <state x="481" y="152" key="RollbackChangesDialog/0.23.1440.804@0.23.1440.804" timestamp="1609056723734" />
@@ -395,13 +403,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>377</line>
+          <line>376</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
           <line>280</line>
-          <option name="timeStamp" value="74" />
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
+          <line>593</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
+          <line>598</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

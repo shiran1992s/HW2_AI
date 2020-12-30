@@ -279,8 +279,7 @@ class Player(AbstractPlayer):
                 # print(f'In Depth = {depth} ,maximizing_player={True}, player making move:{move}\n')
                 current_game_state.make_move(move, True)
                 move_minimax_value, move_2 = self.search_algos.search(current_game_state, depth, False)
-                if move_2 == float("inf"):
-                    return move_2
+
                 result_values.update({move: move_minimax_value})
                 current_game_state.undo_move(move, True)
                 # print(f'In Depth = {depth} ,maximizing_player={True}, player undoing move:{move}\n')
@@ -459,7 +458,6 @@ class Player(AbstractPlayer):
         if self_moves_tuple[1] == 0 or rival_moves_tuple[1] == 0:
             if self_moves_tuple[1] > 0:
                 if current_state.points > current_state.rival_points - current_state.penalty_score:
-                    # print("ut")  # TODO: remove!!!
                     return float("inf")
                 elif current_state.points < current_state.rival_points - current_state.penalty_score:
                     return float("-inf")
@@ -467,7 +465,6 @@ class Player(AbstractPlayer):
                     return 0
             elif rival_moves_tuple[1] > 0:
                 if current_state.points - current_state.penalty_score > current_state.rival_points:
-                    # print("ut")  # TODO: remove!!!
                     return float("inf")
                 elif current_state.points - current_state.penalty_score < current_state.rival_points:
                     return float("-inf")
@@ -584,34 +581,32 @@ def heuristic(state):
     if len(succs_moves_manhattan_dists) > 0:
         moves_avg_value = sum(succs_moves_manhattan_dists.values())/len(succs_moves_manhattan_dists)
 
+    ''' Calculating the board size'''
+    board_size = len(state.game_board) * len(state.game_board[0])
+    middle_of_board = [int(len(state.game_board)/2), int(len(state.game_board[0])/2)]
     ''' Calculating Manhattan distance between player position and the fruits positions '''
 
     """new"""
-    blocking = 0
-    if manhattan_distance(state.location, state.rival_location) == 1:
-        if rival_moves_number == 1:
-            if state.points > state.rival_points - state.penalty_score:
-                return float("inf")
-            elif state.fruits_in_game:
-                return float("-inf")
-        else:
-            blocking = state.penalty_score / (rival_moves_number - 1)
 
     points_per_d = 0
     rival_points_per_d = 0
+    loc_in_board = 0
     if state.fruits_in_game and state.fruit_life_time > 0:
         for fruit_loc in fruits_locations:
-            points_per_d += fruits_locations_value[fruit_loc] / manhattan_distance(state.location, fruit_loc)
-            rival_points_per_d += fruits_locations_value[fruit_loc] / manhattan_distance(state.rival_location, fruit_loc)
-        if state.points < state.rival_points - state.penalty_score:
-            blocking = -blocking
-
-    if manhattan_distance(state.location, state.rival_location) == 2:
-        if state.points - state.penalty_score > state.rival_points:
-            return float("inf")
-        else:
-            return float("-inf")
-
+            if manhattan_distance(state.location, fruit_loc) <= state.fruit_life_time:
+                points_per_d += fruits_locations_value[fruit_loc] / manhattan_distance(state.location, fruit_loc)
+            if manhattan_distance(state.rival_location, fruit_loc) <= state.fruit_life_time:
+                rival_points_per_d += fruits_locations_value[fruit_loc] / manhattan_distance(state.rival_location, fruit_loc)
+    else:
+        close_to_mid = manhattan_distance(state.location, middle_of_board)
+        close_to_rival = manhattan_distance(state.location, state.rival_location)
+        rival_close_mid = manhattan_distance(state.rival_location, middle_of_board)
+        loc_in_board = 4/(close_to_mid + 1) - 1/(rival_close_mid + 1) + 2/(close_to_rival)
+    penalty = 0
+    if rival_moves_number == 0:
+        penalty = state.penalty_score
+    if player_moves_number == 0:
+        penalty -= state.penalty_score
 
 
     """."""
@@ -684,8 +679,7 @@ def heuristic(state):
     player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
     rival_location_score = state.player.state_score(board=state.game_board, pos=state.rival_location)
 
-    ''' Calculating the board size'''
-    board_size = len(state.game_board) * len(state.game_board[0])
+
 
     value = None
 #    if total_free_cells / board_size <= 0.5:
@@ -732,9 +726,7 @@ def heuristic(state):
             #         + (3.5 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (12 * moves_avg_value) \
             #         + (9 * player_moves_with_fruits_points) - (2 * rival_moves_with_fruits_points)
 
-    # print("points_per_dist =", points_per_dist, "rival_points_per_dist =", rival_points_per_dist)
-    # value = 8 * state.points + 2 * points_per_dist - 4 * state.rival_points - 1 * rival_points_per_dist
-    value = 8 * state.points + 2 * points_per_d - 4 * state.rival_points - rival_points_per_d + blocking
+    value = 8 * state.points + 2 * points_per_d - 4 * state.rival_points - rival_points_per_d + 0.25 * loc_in_board + 8 * penalty
     return value
 
 
