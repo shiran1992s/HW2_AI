@@ -2,7 +2,7 @@
 MiniMax Player with AlphaBeta pruning
 """
 from players.AbstractPlayer import AbstractPlayer
-#TODO: you can import more modules, if needed
+# TODO: you can import more modules, if needed
 import time
 import utils
 import SearchAlgos
@@ -174,7 +174,7 @@ class GameState:
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
-        #TODO: initialize more fields, if needed, and the AlphaBeta algorithm from SearchAlgos.py
+        # TODO: initialize more fields, if needed, and the AlphaBeta algorithm from SearchAlgos.py
         self.penalty_score = penalty_score
         self.location = None
         self.game_board = None
@@ -260,7 +260,7 @@ class Player(AbstractPlayer):
         self.location = current_game_state.location
         end_update_time = time.time()
         total_update_time = end_update_time - begin_update_time
-
+        self.fruit_life_time -= 1 # TODO: check
         while True:  # Do while
             result_values = dict()
             start_it_time = time.time()

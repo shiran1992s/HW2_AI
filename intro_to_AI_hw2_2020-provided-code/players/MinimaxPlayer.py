@@ -269,6 +269,7 @@ class Player(AbstractPlayer):
             result_values = dict()
             start_it_time = time.time()
             depth += 1
+            print(depth)
             if depth > depth_limit_from_current_state:
                 break
             # if depth != 1:
