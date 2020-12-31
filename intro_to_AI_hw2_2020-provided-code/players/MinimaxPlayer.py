@@ -172,6 +172,7 @@ class GameState:
                 if self.game_board[pos[0], pos[1]] == 0:
                     self.game_board[pos[0], pos[1]] = self.fruit_locations[pos]
 
+
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
@@ -353,7 +354,6 @@ class Player(AbstractPlayer):
     #         if total_time + next_it_time + total_update_time >= time_limit or depth == board_size:
     #             break
 
-
         # self.location = current_game_state.location
         # if self.fruit_life_time > 0:
         #     self.fruit_life_time -= 1
@@ -428,9 +428,6 @@ class Player(AbstractPlayer):
     ########## helper functions in class ##########
     # TODO: add here helper functions in class, if needed
 
-
-
-
     def state_score(self, board, pos):
         num_steps_available = 0
         for d in self.directions:
@@ -449,10 +446,9 @@ class Player(AbstractPlayer):
     # def check_time(self):
     #     return time.time() - self.start_time > self.time_limit - 0.01
 
+# TODO: very basic need to consider fruits positions and values
 
-#TODO: very basic need to consider fruits positions and values
     def utility(self, current_state):
-
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
                                                                       current_state.rival_location)
         if self_moves_tuple[1] == 0 or rival_moves_tuple[1] == 0:
@@ -470,9 +466,7 @@ class Player(AbstractPlayer):
                     return float("-inf")
                 else:
                     return 0
-
         return 0
-
 
     def is_goal(self, current_state):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
@@ -482,7 +476,8 @@ class Player(AbstractPlayer):
         return False
 
  ########## helper functions for MiniMax algorithm ##########
-    #TODO: add here the utility, succ, and perform_move functions used in MiniMax algorithm
+    # TODO: add here the utility, succ, and perform_move functions used in MiniMax algorithm
+
 
 def available_moves_handler(state, location, rival_location):
     board = state.game_board
@@ -507,6 +502,7 @@ def available_moves_handler(state, location, rival_location):
 
     return self_moves_tuple, rival_moves_tuple
 
+
 def get_moves_from_location(state, maximizing_player):
     current_location = state.location if maximizing_player else state.rival_location
     board = state.game_board
@@ -521,6 +517,7 @@ def get_moves_from_location(state, maximizing_player):
 
     return available_moves
 
+
 def get_free_cells_num(state):
     free_cells = 0
     for row_index, row_value in enumerate(state.game_board):
@@ -528,6 +525,7 @@ def get_free_cells_num(state):
             if cell_value == 0:
                 free_cells += 1
     return free_cells
+
 
 def heuristic(state):
     ''' Calculating the player's and the rival's moves locations and count '''
@@ -674,12 +672,9 @@ def heuristic(state):
             else:
                 succ_avg_distances = sum(succ_distances_from_fruits.values()) / len(succ_distances_from_fruits)
 
-
     ''' Calculating the location score like in simple player'''
     player_location_score = state.player.state_score(board=state.game_board, pos=state.location)
     rival_location_score = state.player.state_score(board=state.game_board, pos=state.rival_location)
-
-
 
     value = None
 #    if total_free_cells / board_size <= 0.5:
@@ -813,6 +808,7 @@ def update_fruits_concentration(object_input, location, action):
             object_input.fruits_concentration.update({"first_quarter": object_input.fruits_concentration.get("first_quarter") - 1})
         elif row_index <= max_row_index / 2 and col_index >= max_col_index / 2:
             object_input.fruits_concentration.update({"third_quarter": object_input.fruits_concentration.get("third_quarter") - 1})
+
 
 def location_in_quarter(object_input, location):
     row_index, col_index = location[0], location[1]

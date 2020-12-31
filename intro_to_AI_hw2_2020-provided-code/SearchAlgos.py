@@ -1,9 +1,11 @@
 """Search Algos: MiniMax, AlphaBeta
 """
 from utils import ALPHA_VALUE_INIT, BETA_VALUE_INIT
-#TODO: you can import more modules, if needed
+# TODO: you can import more modules, if needed
+import numpy as np
 
 from players import MinimaxPlayer
+from players import AlphabetaPlayer
 
 
 class SearchAlgos:
@@ -34,7 +36,7 @@ class MiniMax(SearchAlgos):
         :param maximizing_player: Whether this is a max node (True) or a min node (False).
         :return: A tuple: (The min max algorithm value, The direction in case of max node or None in min mode)
         """
-        #TODO: erase the following line and implement this function.
+        # TODO: erase the following line and implement this function.
 
         # if MinimaxPlayer.Player.check_time():
         #     MinimaxPlayer.Player.time_ended = True
@@ -91,5 +93,46 @@ class AlphaBeta(SearchAlgos):
         :param: beta: beta value
         :return: A tuple: (The min max algorithm value, The direction in case of max node or None in min mode)
         """
-        #TODO: erase the following line and implement this function.
-        raise NotImplementedError
+        # TODO: erase the following line and implement this function.
+        # raise NotImplementedError
+        if self.goal(state):
+            val = self.utility(state), None
+            # print(f'In Goal State ,maximizing_player={maximizing_player}, Utility value is:{val}\n')
+            return val
+        if depth == 0:
+            val = MinimaxPlayer.heuristic(state), None
+            # print(f'In Depth 0 ,maximizing_player={maximizing_player}, Heuristic value is:{val}\n')
+            return val
+
+        available_moves = MinimaxPlayer.get_moves_from_location(state, maximizing_player)
+        max_result = float("-inf")
+        min_result = float("inf")
+        selected_move = None
+
+        for move in available_moves:
+
+            state.make_move(move, maximizing_player)
+            move_value = self.search(state, depth - 1, not maximizing_player, alpha, beta)
+            state.undo_move(move, maximizing_player)
+
+            if move_value[0] == np.inf or move_value[0] == -np.inf:
+                break
+
+            if maximizing_player and max_result < move_value[0]:
+                max_result = move_value[0]
+                selected_move = move
+                alpha = move_value[0]
+                if alpha <= beta:
+                    return np.inf, None
+
+            elif (not maximizing_player) and (min_result > move_value[0]):
+                min_result = move_value[0]
+                beta = move_value[0]
+                if alpha >= beta:
+                    return -np.inf, None
+
+        if maximizing_player:
+            return max_result, selected_move
+
+        else:
+            return min_result, None

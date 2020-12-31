@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="850c1bca-4f96-4bfb-8e35-54dc77ded2e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609278410951</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="heuristic">
+      <created>1609364139097</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609364139097</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -337,44 +347,48 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="212" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1609066612748" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609363955644">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609411683739">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609363955644" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609363955642">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609411683739" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609411683737">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609363955642" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609363955641">
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609411683737" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609411683736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609363955641" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609363955643">
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609411683736" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609411683738">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609363955643" />
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609362591855">
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609411683738" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609411096956">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609362591855" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609411096956" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.816@0.23.1440.816" timestamp="1609410735374" />
     <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.822@0.23.1440.822" timestamp="1609361894531" />
     <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.23.1440.825@0.23.1440.825" timestamp="1609161067575" />
-    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1609362591853">
+    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1609411096954">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609362591853" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1609411096954" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.816@0.23.1440.816" timestamp="1609410735372" />
     <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.822@0.23.1440.822" timestamp="1609361894530" />
     <state width="1419" height="304" key="GridCell.Tab.1.center/0.23.1440.825@0.23.1440.825" timestamp="1609161067573" />
-    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1609362591852">
+    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1609411096953">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609362591852" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1609411096953" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.816@0.23.1440.816" timestamp="1609410735371" />
     <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.822@0.23.1440.822" timestamp="1609361894529" />
     <state width="1419" height="304" key="GridCell.Tab.1.left/0.23.1440.825@0.23.1440.825" timestamp="1609161067572" />
-    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1609362591854">
+    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1609411096955">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609362591854" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1609411096955" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1609410735373" />
     <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.822@0.23.1440.822" timestamp="1609361894531" />
     <state width="1419" height="304" key="GridCell.Tab.1.right/0.23.1440.825@0.23.1440.825" timestamp="1609161067574" />
     <state x="481" y="152" key="RollbackChangesDialog" timestamp="1609056723734" />
@@ -408,23 +422,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>280</line>
+          <line>281</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="77" />
+          <line>125</line>
+          <option name="timeStamp" value="87" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>593</line>
-          <option name="timeStamp" value="79" />
+          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py</url>
-          <line>598</line>
-          <option name="timeStamp" value="80" />
+          <url>file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/SearchAlgos.py</url>
+          <line>117</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
