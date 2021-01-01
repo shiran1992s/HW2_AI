@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$" />
     </content>
     <content url="file://$MODULE_DIR$/intro_to_AI_hw2_2020-provided-code" />
-    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (intro_to_AI_hw2_2020-provided-code)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
