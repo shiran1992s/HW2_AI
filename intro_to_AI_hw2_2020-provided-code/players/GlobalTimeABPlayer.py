@@ -191,7 +191,7 @@ class Player(AbstractPlayer):
         self.fruits_concentration = None
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
-        self.turn_number = 0
+        # self.turn_number = 0
         self.game_time = game_time
         self.free_cells_num = 0
 
@@ -246,12 +246,12 @@ class Player(AbstractPlayer):
         # TODO: erase the following line and implement this function.
         # raise NotImplementedError
         start_time = time.time()
-        self.turn_number += 1
-        time_limit_per_turn = time_limit
+        time_limit_per_turn = (3 ** self.free_cells_num) * 8 * time_limit / (9 * ((3 ** self.free_cells_num) - 1))
+        self.free_cells_num -= 2
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
-        num_of_free_cells = get_free_cells_num(self.game_board) # TODO: todo
+        # num_of_free_cells = get_free_cells_num(self.game_board) # TODO: todo
         depth = 0
         current_game_state = GameState(self.game_board, self.location, self.rival_location, self)
         available_moves = get_moves_from_location(current_game_state, True)
@@ -285,7 +285,7 @@ class Player(AbstractPlayer):
                 first_it_time = it_time
             next_it_time = first_it_time + 4 * it_time
             total_time = time.time() - start_time
-            if total_time + next_it_time + total_update_time >= time_limit or depth > board_size:
+            if total_time + next_it_time + total_update_time >= time_limit_per_turn or depth > board_size:
                 break
             best_move_chosen = max(result_values, key=result_values.get)
         current_game_state.make_move(best_move_chosen, True)
@@ -306,7 +306,7 @@ class Player(AbstractPlayer):
         if cell_value > 2:
             if self.fruit_life_time > 0:
                 self.rival_points += cell_value
-                print("pos= (", pos[0], ",", pos[1], ")")  # TODO: remove!!
+                # print("pos= (", pos[0], ",", pos[1], ")")  # TODO: remove!!
                 self.fruit_locations.pop(pos)
                 update_fruits_concentration(self, pos, "MINUS")
                 if pos == self.best_fruit_location:

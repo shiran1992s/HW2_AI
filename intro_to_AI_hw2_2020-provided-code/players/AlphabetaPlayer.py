@@ -133,7 +133,6 @@ class GameState:
             else:
                 self.rival_points += cell_value
 
-
     def cancel_eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
             self.fruit_locations.update({position: cell_value})
@@ -196,6 +195,7 @@ class Player(AbstractPlayer):
         self.fruits_concentration = None
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
+        self.free_cells_num = 0 # TODO: remove
 
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
@@ -232,10 +232,12 @@ class Player(AbstractPlayer):
                     if cell_value > self.best_fruit_value:
                         self.best_fruit_value = cell_value
                         self.best_fruit_location = (row_index, cell_index)
+
         if self.fruits_in_game:
             self.fruit_life_time = self.min_dimention * 2
         else:
             self.fruit_life_time = 0
+
 
     def make_move(self, time_limit, players_score):
         """Make move with this Player.
@@ -320,7 +322,7 @@ class Player(AbstractPlayer):
         if cell_value > 2:
             if self.fruit_life_time > 0:
                 self.rival_points += cell_value
-                print("pos= (", pos[0], ",", pos[1], ")")  # TODO: remove!!
+                # print("pos= (", pos[0], ",", pos[1], ")")  # TODO: remove!!
                 self.fruit_locations.pop(pos)
                 update_fruits_concentration(self, pos, "MINUS")
                 if pos == self.best_fruit_location:

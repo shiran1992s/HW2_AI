@@ -374,7 +374,7 @@ class Player(AbstractPlayer):
         if cell_value > 2:
             if self.fruit_life_time > 0:
                 self.rival_points += cell_value
-                print("pos= (", pos[0], ",", pos[1], ")") # TODO: remove!!
+                # print("pos= (", pos[0], ",", pos[1], ")") # TODO: remove!!
                 self.fruit_locations.pop(pos)
                 update_fruits_concentration(self, pos, "MINUS")
                 if pos == self.best_fruit_location:
