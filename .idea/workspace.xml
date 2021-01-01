@@ -25,13 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="850c1bca-4f96-4bfb-8e35-54dc77ded2e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/HW2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/HW2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AbstractPlayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/GlobalTimeABPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/GlobalTimeABPlayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609412181411</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="free_cells">
+      <created>1609504489085</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1609504489085</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -345,7 +347,8 @@
     <MESSAGE value="old" />
     <MESSAGE value="heuristic" />
     <MESSAGE value="alpha beta" />
-    <option name="LAST_COMMIT_MESSAGE" value="alpha beta" />
+    <MESSAGE value="free_cells" />
+    <option name="LAST_COMMIT_MESSAGE" value="free_cells" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609068631920">
@@ -361,22 +364,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="212" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1609066612748" />
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609502439918">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom" timestamp="1609511396904">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609502439918" />
-    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609502439916">
+    <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1609511396904" />
+    <state width="1419" height="245" key="GridCell.Tab.0.center" timestamp="1609511396902">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609502439916" />
-    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609502439915">
+    <state width="1419" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1609511396902" />
+    <state width="1419" height="245" key="GridCell.Tab.0.left" timestamp="1609511396901">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609502439915" />
-    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609502439917">
+    <state width="1419" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1609511396901" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right" timestamp="1609511396903">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609502439917" />
+    <state width="1419" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1609511396903" />
     <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1609417759884">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

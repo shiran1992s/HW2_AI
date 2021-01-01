@@ -251,7 +251,7 @@ class Player(AbstractPlayer):
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
-        num_of_free_cells = get_free_cells_num(self.game_board)
+        num_of_free_cells = get_free_cells_num(self.game_board) # TODO: todo
         depth = 0
         current_game_state = GameState(self.game_board, self.location, self.rival_location, self)
         available_moves = get_moves_from_location(current_game_state, True)
