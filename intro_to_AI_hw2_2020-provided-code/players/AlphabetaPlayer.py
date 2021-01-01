@@ -454,7 +454,7 @@ def heuristic(state):
     self_moves_tuple, rival_moves_tuple = available_moves_handler(state, state.location, state.rival_location)
     player_moves, player_moves_number = self_moves_tuple[0], self_moves_tuple[1]
     rival_moves, rival_moves_number = rival_moves_tuple[0], rival_moves_tuple[1]
-
+    middle_of_board = [int(len(state.game_board) / 2), int(len(state.game_board[0]) / 2)]
     ''' Calculating board parameters
         1) Total number of available cells
         2) Dictionary of fruit location -> fruit value
