@@ -74,7 +74,7 @@ class GameState:
             self.location = (self.location[0] + move[0], self.location[1] + move[1])
             cell_value = self.game_board[self.location[0]][self.location[1]]
             self.last_cell_value_player.append(cell_value)
-            if self.fruit_locations is not None and self.location in self.fruit_locations:
+            if self.fruit_locations is not None and self.location in self.fruit_locations and self.fruit_life_time > 0:
                 self.eat_fruit(cell_value, self.location, maximizing_player)
             self.game_board[self.location[0]][self.location[1]] = 1
         else:
@@ -82,7 +82,7 @@ class GameState:
             self.rival_location = (self.rival_location[0] + move[0], self.rival_location[1] + move[1])
             cell_value = self.game_board[self.rival_location[0]][self.rival_location[1]]
             self.last_cell_value_rival.append(cell_value)
-            if self.fruit_locations is not None and self.location in self.fruit_locations:
+            if self.fruit_locations is not None and self.rival_location in self.fruit_locations and self.fruit_life_time > 0:
                 self.eat_fruit(cell_value, self.rival_location, maximizing_player)
             self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
 
@@ -98,7 +98,7 @@ class GameState:
         if maximizing_player:
             cell_value = self.last_cell_value_player.pop()
             self.game_board[self.location[0]][self.location[1]] = cell_value
-            if self.fruit_locations is not None and self.location in self.player.fruit_locations:
+            if self.location in self.player.fruit_locations and self.fruit_life_time >= 0:
                 self.cancel_eat_fruit(cell_value, self.location, maximizing_player)
             # self.game_board[self.location[0]][self.location[1]] = 0
             self.location = (self.location[0] - move[0], self.location[1] - move[1])
@@ -107,7 +107,7 @@ class GameState:
         else:
             cell_value = self.last_cell_value_rival.pop()
             self.game_board[self.rival_location[0]][self.rival_location[1]] = cell_value
-            if self.fruit_locations is not None and self.location in self.player.fruit_locations:
+            if self.rival_location in self.player.fruit_locations and self.fruit_life_time >= 0:
                 self.cancel_eat_fruit(cell_value, self.rival_location, maximizing_player)
             # self.game_board[self.rival_location[0]][self.rival_location[1]] = 0
             self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
@@ -232,10 +232,10 @@ class Player(AbstractPlayer):
                     if cell_value > self.best_fruit_value:
                         self.best_fruit_value = cell_value
                         self.best_fruit_location = (row_index, cell_index)
-                if self.fruits_in_game:
-                    self.fruit_life_time = self.min_dimention * 2
-                else:
-                    self.fruit_life_time = 0
+        if self.fruits_in_game:
+            self.fruit_life_time = self.min_dimention * 2
+        else:
+            self.fruit_life_time = 0
 
     def make_move(self, time_limit, players_score):
         """Make move with this Player.
@@ -275,17 +275,18 @@ class Player(AbstractPlayer):
                     exit()
                 # print(f'In Depth = {depth} ,maximizing_player={True}, player making move:{move}\n')
                 current_game_state.make_move(move, True)
-
+                depth -= 1
                 move_minimax_value, move_2 = self.search_algos.search(current_game_state, depth, False)
 
                 result_values.update({move: move_minimax_value})
                 current_game_state.undo_move(move, True)
+                depth += 1
                 # print(f'In Depth = {depth} ,maximizing_player={True}, player undoing move:{move}\n')
 
             it_time = time.time() - start_it_time
             if depth == 1:
                 first_it_time = it_time
-            next_it_time = first_it_time + 4 * it_time  # Im not sure that this is the right calculation (5)
+            next_it_time = first_it_time + 4 * it_time
             total_time = time.time() - start_time
             # if depth >= board_size / 2:
             #     break

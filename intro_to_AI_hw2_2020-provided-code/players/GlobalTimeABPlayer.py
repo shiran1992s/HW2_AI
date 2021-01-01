@@ -41,7 +41,6 @@ class GameState:
     fruits_initial_state = None
     free_cells_num = None
 
-
     def __init__(self, game_board, location, rival_location, player):
         self.player = player
         self.game_board = game_board
@@ -51,11 +50,11 @@ class GameState:
         self.penalty_score = player.penalty_score
         self.rival_points = player.rival_points
         self.points = player.points
-        self.free_cells_num = 0 # TODO: finish!!!!!!
-        for row_index, row_value in enumerate(game_board):
-            for cell_index, cell_value in enumerate(row_value):
-                if cell_value == 0:
-                    self.free_cells_num += 1
+        # self.free_cells_num = 0 # TODO: finish!!!!!!
+        # for row_index, row_value in enumerate(game_board):
+        #     for cell_index, cell_value in enumerate(row_value):
+        #         if cell_value == 0:
+        #             self.free_cells_num += 1
         if player.fruit_locations is not None and len(player.fruit_locations) > 0:
             self.fruit_locations = dict(player.fruit_locations)
             self.best_fruit_value = player.best_fruit_value
@@ -71,7 +70,7 @@ class GameState:
             self.location = (self.location[0] + move[0], self.location[1] + move[1])
             cell_value = self.game_board[self.location[0]][self.location[1]]
             self.last_cell_value_player.append(cell_value)
-            if self.fruit_locations is not None and self.location in self.fruit_locations:
+            if self.fruit_locations is not None and self.location in self.fruit_locations and self.fruit_life_time > 0:
                 self.eat_fruit(cell_value, self.location, maximizing_player)
             self.game_board[self.location[0]][self.location[1]] = 1
         else:
@@ -79,7 +78,7 @@ class GameState:
             self.rival_location = (self.rival_location[0] + move[0], self.rival_location[1] + move[1])
             cell_value = self.game_board[self.rival_location[0]][self.rival_location[1]]
             self.last_cell_value_rival.append(cell_value)
-            if self.fruit_locations is not None and self.location in self.fruit_locations:
+            if self.fruit_locations is not None and self.rival_location in self.fruit_locations and self.fruit_life_time > 0:
                 self.eat_fruit(cell_value, self.rival_location, maximizing_player)
             self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
 
@@ -95,7 +94,7 @@ class GameState:
         if maximizing_player:
             cell_value = self.last_cell_value_player.pop()
             self.game_board[self.location[0]][self.location[1]] = cell_value
-            if self.fruit_locations is not None and self.location in self.player.fruit_locations:
+            if self.location in self.player.fruit_locations and self.fruit_life_time >= 0:
                 self.cancel_eat_fruit(cell_value, self.location, maximizing_player)
             # self.game_board[self.location[0]][self.location[1]] = 0
             self.location = (self.location[0] - move[0], self.location[1] - move[1])
@@ -104,7 +103,7 @@ class GameState:
         else:
             cell_value = self.last_cell_value_rival.pop()
             self.game_board[self.rival_location[0]][self.rival_location[1]] = cell_value
-            if self.fruit_locations is not None and self.location in self.player.fruit_locations:
+            if self.rival_location in self.player.fruit_locations and self.fruit_life_time >= 0:
                 self.cancel_eat_fruit(cell_value, self.rival_location, maximizing_player)
             # self.game_board[self.rival_location[0]][self.rival_location[1]] = 0
             self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
@@ -129,7 +128,6 @@ class GameState:
                 self.points += cell_value
             else:
                 self.rival_points += cell_value
-
 
     def cancel_eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
@@ -195,6 +193,7 @@ class Player(AbstractPlayer):
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
         self.turn_number = 0
         self.game_time = game_time
+        self.free_cells_num = 0
 
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
@@ -225,14 +224,17 @@ class Player(AbstractPlayer):
                     location = (row_index, cell_index)
                     self.fruit_locations.update({location: cell_value})
                     update_fruits_concentration(self, location, "PLUS")
-
                     if cell_value > self.best_fruit_value:
                         self.best_fruit_value = cell_value
                         self.best_fruit_location = (row_index, cell_index)
-                if self.fruits_in_game:
-                    self.fruit_life_time = self.min_dimention * 2
-                else:
-                    self.fruit_life_time = 0
+
+                if cell_value == 0 or cell_value > 2:
+                    self.free_cells_num += 1
+
+        if self.fruits_in_game:
+            self.fruit_life_time = self.min_dimention * 2
+        else:
+            self.fruit_life_time = 0
 
     def make_move(self, time_limit, players_score):
         """Make move with this Player.
@@ -249,6 +251,7 @@ class Player(AbstractPlayer):
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
+        num_of_free_cells = get_free_cells_num(self.game_board) # TODO: todo
         depth = 0
         current_game_state = GameState(self.game_board, self.location, self.rival_location, self)
         available_moves = get_moves_from_location(current_game_state, True)
@@ -270,11 +273,12 @@ class Player(AbstractPlayer):
                 if move is None:
                     exit()
                 current_game_state.make_move(move, True)
-
+                depth -= 1
                 move_minimax_value, move_2 = self.search_algos.search(current_game_state, depth, False)
 
                 result_values.update({move: move_minimax_value})
                 current_game_state.undo_move(move, True)
+                depth += 1
 
             it_time = time.time() - start_it_time
             if depth == 1:
