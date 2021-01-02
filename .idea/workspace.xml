@@ -34,7 +34,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/HW2$MinimaxPlayer_vs_LivePlayer.coverage" NAME="MinimaxPlayer vs LivePlayer Coverage Results" MODIFIED="1608883769187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
     <SUITE FILE_PATH="coverage/HW2$MinimaxPlayer_vs_MinimaxPlayer.coverage" NAME="MinimaxPlayer vs MinimaxPlayer Coverage Results" MODIFIED="1608901126046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
-    <SUITE FILE_PATH="coverage/HW2$main.coverage" NAME="main Coverage Results" MODIFIED="1609585242218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
+    <SUITE FILE_PATH="coverage/HW2$main.coverage" NAME="main Coverage Results" MODIFIED="1609592499741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
     <SUITE FILE_PATH="coverage/HW2$SimplePlayer_Vs_MinimaxPlayer.coverage" NAME="SimplePlayer Vs MinimaxPlayer Coverage Results" MODIFIED="1608985494144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code" />
   </component>
   <component name="DatabaseView">
@@ -89,12 +89,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="316" column="96" selection-start-line="316" selection-start-column="96" selection-end-line="316" selection-end-column="96" />
+            <state relative-caret-position="-7996">
+              <caret line="319" column="48" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
               <folding>
                 <element signature="e#23#72#0" expanded="true" />
                 <element signature="e#29516#29537#0" />
-                <element signature="e#35821#35866#0" />
               </folding>
             </state>
           </provider>
@@ -103,10 +102,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="315" column="96" selection-start-line="315" selection-start-column="96" selection-end-line="315" selection-end-column="96" />
+            <state relative-caret-position="241">
+              <caret line="318" column="48" selection-start-line="318" selection-start-column="26" selection-end-line="318" selection-end-column="48" />
               <folding>
                 <element signature="e#46#95#0" expanded="true" />
+                <element signature="e#31650#31671#0" />
+                <element signature="e#37979#38024#0" />
               </folding>
             </state>
           </provider>
@@ -310,7 +311,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607697461366</updated>
       <workItem from="1608797750472" duration="83032000" />
-      <workItem from="1609512694137" duration="23377000" />
+      <workItem from="1609512694137" duration="26808000" />
     </task>
     <task id="LOCAL-00001" summary="may">
       <created>1608060344910</created>
@@ -424,11 +425,18 @@
       <option name="project" value="LOCAL" />
       <updated>1609500527933</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="After fixing many bugs">
+      <created>1609591190120</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1609591190121</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124280000" />
+    <option name="totallyTimeSpent" value="127711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -448,15 +456,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.20476706" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.85927504" visible="true" weight="0.097508125" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49840087" visible="true" weight="0.06608884" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.85927504" weight="0.097508125" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.14072494" side_tool="true" visible="true" weight="0.097508125" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.06608884" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -517,7 +525,8 @@
     <MESSAGE value="heuristic" />
     <MESSAGE value="alpha beta" />
     <MESSAGE value="fixing bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing bug" />
+    <MESSAGE value="After fixing many bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="After fixing many bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
@@ -685,22 +694,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/AlphabetaPlayer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="315" column="96" selection-start-line="315" selection-start-column="96" selection-end-line="315" selection-end-column="96" />
+        <state relative-caret-position="241">
+          <caret line="318" column="48" selection-start-line="318" selection-start-column="26" selection-end-line="318" selection-end-column="48" />
           <folding>
             <element signature="e#46#95#0" expanded="true" />
+            <element signature="e#31650#31671#0" />
+            <element signature="e#37979#38024#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/intro_to_AI_hw2_2020-provided-code/players/MinimaxPlayer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="316" column="96" selection-start-line="316" selection-start-column="96" selection-end-line="316" selection-end-column="96" />
+        <state relative-caret-position="-7996">
+          <caret line="319" column="48" selection-start-line="319" selection-start-column="48" selection-end-line="319" selection-end-column="48" />
           <folding>
             <element signature="e#23#72#0" expanded="true" />
             <element signature="e#29516#29537#0" />
-            <element signature="e#35821#35866#0" />
           </folding>
         </state>
       </provider>
