@@ -2,13 +2,13 @@
 MiniMax Player
 """
 from players.AbstractPlayer import AbstractPlayer
-#TODO: you can import more modules, if needed
+# TODO: you can import more modules, if needed
 import time
 import utils
 import SearchAlgos
 import copy
 
-#TODO: Check if need instance of player and handle fruits
+# TODO: Check if need instance of player and handle fruits
 
 class FruitsState:
     fruit_locations = None
@@ -42,10 +42,6 @@ class GameState:
     fruits_state = []
     fruits_initial_state = None
 
-    # moves_available = []
-    # moves_available_count = 0
-    # rival_moves_available = []
-    # rival_moves_available_count = 0
 
     def __init__(self, game_board, location, rival_location, fruit_life_time, penalty_score, rival_points, points,
                  fruit_locations, best_fruit_value, best_fruit_location, fruits_concentration):
@@ -188,6 +184,7 @@ class GameState:
                     self.game_board[pos[0], pos[1]] = self.fruit_locations[pos]
         # print(f'after restore_fruits: game_board={self.game_board}\n\n\n')
 
+
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
@@ -214,6 +211,9 @@ class Player(AbstractPlayer):
         self.fruits_concentration = None
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.MiniMax(self.utility, None, self.make_move, self.is_goal)
+
+
+
 
     def set_game_params(self, board):
         """Set the game parameters needed for this player.

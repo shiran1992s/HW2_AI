@@ -65,11 +65,6 @@ class GameState:
             self.fruits_concentration = copy.deepcopy(fruits_concentration)
             self.fruits_initial_state = FruitsState(self.fruit_locations, self.best_fruit_value
                                                     , self.best_fruit_location, self.fruits_concentration)
-        # for row_index, row_value in enumerate(game_board): #TODO: IF NOT USED REMOVE FRUITS_LIFE_TIME
-        #     for cell_index, cell_value in enumerate(row_value):
-        #         if cell_value > 2:
-        #             location = (row_index, cell_index)
-        #             self.fruits_location.update({location: cell_value})
 
     def make_move(self, move, maximizing_player):
         if maximizing_player:
@@ -142,7 +137,6 @@ class GameState:
         #       f'points:{self.points},rival_points={self.rival_points},'
         #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
 
-
     def cancel_eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
             # print(f'before cancel eat fruit:\nposition={position},'
@@ -161,7 +155,6 @@ class GameState:
         #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
 
     def update_fruits(self, fruits_on_board_dict):
-
         if fruits_on_board_dict is not None and len(fruits_on_board_dict) > 0:
             # print(f'in update_fruits: fruit_locations={self.fruit_locations}\n\n\n')
             fruit_positions = fruits_on_board_dict.keys()
@@ -216,6 +209,8 @@ class Player(AbstractPlayer):
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
 
+
+
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -236,12 +231,8 @@ class Player(AbstractPlayer):
             for cell_index, cell_value in enumerate(row_value):
                 if cell_value == 1:
                     self.location = (row_index, cell_index)
-                    # number_of_players -= 1
                 if cell_value == 2:
                     self.rival_location = (row_index, cell_index)
-                    # number_of_players -= 1
-                # if number_of_players is 0:
-                #     break
                 if cell_value > 2:
                     self.fruits_in_game = True
                     location = (row_index, cell_index)
@@ -251,6 +242,8 @@ class Player(AbstractPlayer):
                     if cell_value > self.best_fruit_value:
                         self.best_fruit_value = cell_value
                         self.best_fruit_location = (row_index, cell_index)
+
+
         if self.fruits_in_game:
             self.fruit_life_time = self.min_dimention * 2
         else:
@@ -266,6 +259,8 @@ class Player(AbstractPlayer):
         # TODO: erase the following line and implement this function.
         # raise NotImplementedError
         start_time = time.time()
+
+
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
@@ -281,15 +276,13 @@ class Player(AbstractPlayer):
         self.location = current_game_state.location
         end_update_time = time.time()
         total_update_time = end_update_time - begin_update_time
-        # self.fruit_life_time -= 1 # TODO: check
+
         while True:  # Do while
             result_values = dict()
             start_it_time = time.time()
             depth += 1
             if depth > depth_limit_from_current_state:
                 break
-            # if depth != 1:
-            #     current_game_state.undo_move(move, True)
             # print(f'In Depth = {depth} ,maximizing_player={True}, available_moves:{available_moves}\n\n\n')
             for move in available_moves:
                 if move is None:
@@ -303,16 +296,12 @@ class Player(AbstractPlayer):
                 current_game_state.undo_move(move, True)
                 depth += 1
                 # print(f'In Depth = {depth} ,maximizing_player={True}, player undoing move:{move}\n')
-
             it_time = time.time() - start_it_time
             if depth == 1:
                 first_it_time = it_time
             next_it_time = first_it_time + 4 * it_time
             total_time = time.time() - start_time
-            # if depth >= board_size / 2:
-            #     break
-            # if depth == 8:
-            #     break
+
             if total_time + next_it_time + total_update_time >= time_limit or depth > board_size:
                 break
             best_move_chosen = max(result_values, key=result_values.get)
@@ -331,11 +320,6 @@ class Player(AbstractPlayer):
                      current_game_state.best_fruit_value)
         print(f'Player = {self.name},after sync:\nlocation={self.location},'
               f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
-        # if self.fruits_in_game:
-        #     if self.fruit_life_time > 0:
-        #         self.fruit_life_time -= 1
-        #         if self.fruit_life_time == 0:
-        #             self.fruits_life_ended(self.fruit_locations)
         return best_move_chosen
 
     def set_rival_move(self, pos):
@@ -396,8 +380,6 @@ class Player(AbstractPlayer):
 
     ########## helper functions in class ##########
     # TODO: add here helper functions in class, if needed
-
-
 
     def utility(self, current_state):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
@@ -460,6 +442,7 @@ class Player(AbstractPlayer):
     ########## helper functions for AlphaBeta algorithm ##########
     # TODO: add here the utility, succ, and perform_move functions used in AlphaBeta algorithm
 
+
 def state_score(board, pos):
     num_steps_available = 0
     for d in utils.get_directions():
@@ -474,6 +457,7 @@ def state_score(board, pos):
         return -1
     else:
         return 4 - num_steps_available
+
 
 def available_moves_handler(state, location, rival_location):
     board = state.game_board
@@ -790,6 +774,7 @@ def heuristic(state):
     # value = 8 * state.points + 2 * points_per_d - 4 * state.rival_points - rival_points_per_d + 0.25 * loc_in_board + 8 * penalty
     return value
 
+
 def get_blocked_cells_according_to_locations(state):
     blocked_cells = 1
     if state.rival_location[0] > state.location[0]:
@@ -809,6 +794,7 @@ def get_blocked_cells_according_to_locations(state):
             if state.game_board[row][col] != 0 and state.game_board[row][col] <= 2:
                 blocked_cells += 1
     return blocked_cells
+
 
 def get_manhattan_dists_for_succ(succ_moves, state):
     dists = dict()
