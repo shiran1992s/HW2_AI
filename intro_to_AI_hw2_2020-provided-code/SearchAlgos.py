@@ -43,7 +43,7 @@ class MiniMax(SearchAlgos):
         #     MinimaxPlayer.Player.time_ended = True
         # if MinimaxPlayer.Player.time_ended:
         #     return -1
-        if self.goal(state):
+        if self.goal(state, maximizing_player):
             val = self.utility(state), None
             # print(f'In Goal State ,maximizing_player={maximizing_player}, Utility value is:{val}\n')
             return val
@@ -96,7 +96,7 @@ class AlphaBeta(SearchAlgos):
         """
         # TODO: erase the following line and implement this function.
         # raise NotImplementedError
-        if self.goal(state):
+        if self.goal(state, maximizing_player):
             val = self.utility(state), None
             # print(f'In Goal State ,maximizing_player={maximizing_player}, Utility value is:{val}\n')
             return val

@@ -432,11 +432,15 @@ class Player(AbstractPlayer):
         #             return 0
         # return 0
 
-    def is_goal(self, current_state):
+    def is_goal(self, current_state, maximizing_player):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
                                                                            current_state.rival_location)
-        if self_moves_tuple[1] == 0 or rival_moves_tuple[1] == 0:
-            return True
+        if maximizing_player:
+            if self_moves_tuple[1] == 0:
+                return True
+        else:
+            if rival_moves_tuple[1] == 0:
+                return True
         return False
 
     ########## helper functions for AlphaBeta algorithm ##########
@@ -659,7 +663,7 @@ def heuristic(state):
     #         if temp_rival_points_per_dist_list is not None and len(temp_rival_points_per_dist_list) > 0:
     #             rival_points_per_dist = sum(temp_rival_points_per_dist_list)
     """end new"""
-
+    temp_distances_list = None
     avg_distances = 0
     succ_avg_distances = 0
     if state.fruits_in_game:
