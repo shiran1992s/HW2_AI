@@ -12,14 +12,14 @@ if __name__ == "__main__":
     parser.add_argument('-player1', default='MinimaxPlayer', type=str,
                         help='The type of the first player.',
                         choices=players_options)
-    parser.add_argument('-player2', default='AlphabetaPlayer',  type=str,
+    parser.add_argument('-player2', default='LivePlayer',  type=str,
                         help='The type of the second player.',
                         choices=players_options)
     
-    parser.add_argument('-board', default='default_board.csv', type=str, 
+    parser.add_argument('-board', default='default_board.csv', type=str,
                         help='Name of board file (.csv).')
 
-    parser.add_argument('-move_time', default=200, type=float,
+    parser.add_argument('-move_time', default=20, type=float,
                         help='Time (sec) for each turn.')
     parser.add_argument('-game_time', default=2000, type=float,
                         help='Global game time (sec) for each player.')

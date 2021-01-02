@@ -432,11 +432,15 @@ class Player(AbstractPlayer):
         #             return 0
         # return 0
 
-    def is_goal(self, current_state):
+    def is_goal(self, current_state, maximizing_player):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
                                                                            current_state.rival_location)
-        if self_moves_tuple[1] == 0 or rival_moves_tuple[1] == 0:
-            return True
+        if maximizing_player:
+            if self_moves_tuple[1] == 0:
+                return True
+        else:
+            if rival_moves_tuple[1] == 0:
+                return True
         return False
 
     ########## helper functions for AlphaBeta algorithm ##########
@@ -659,7 +663,7 @@ def heuristic(state):
     #         if temp_rival_points_per_dist_list is not None and len(temp_rival_points_per_dist_list) > 0:
     #             rival_points_per_dist = sum(temp_rival_points_per_dist_list)
     """end new"""
-
+    temp_distances_list = None
     avg_distances = 0
     succ_avg_distances = 0
     if state.fruits_in_game:
@@ -704,28 +708,28 @@ def heuristic(state):
     if blocked_cells / (board_size - total_free_cells) < 0.4:
         if state.fruit_life_time > 0:
             value = ((2 * player_moves_number) - (2 * rival_moves_number)
-                     + (len(blocking_moves)) + (len(successor_available_moves)) + 0.03 * state.points
+                     + (len(blocking_moves)) + (len(successor_available_moves)) + 0.3 * state.points
                      - (1 * player_bestfruit_manhattan_dist) #+ (0.5 * rival_bestfruit_manhattan_dist)
                      + (2 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (0.02 * moves_avg_value)
                      + (1 * player_moves_with_fruits_points) #- (1 * rival_moves_with_fruits_points)
                      + (0.1 * player_location_score) - (0.1 * rival_location_score))
         else:
             value = (2 * player_moves_number) - (2 * rival_moves_number) \
-                    + (len(blocking_moves)) + (len(successor_available_moves) + 0.01 * state.points)
+                    + (len(blocking_moves)) + (len(successor_available_moves) + 0.1 * state.points)
 
         # value = (2 * player_moves_number) - (3 * rival_moves_number) \
         #         + (len(blocking_moves)) + (len(successor_available_moves) + 0.01 * state.points)
     else:
         if state.fruit_life_time > 0:
             value = ((3 * player_moves_number) - (1 * rival_moves_number)
-                     + (len(blocking_moves)) + (2 * len(successor_available_moves)) + 0.01 * state.points
+                     + (len(blocking_moves)) + (2 * len(successor_available_moves)) + 0.1 * state.points
                      - (1 * player_bestfruit_manhattan_dist) #+ (1 * rival_bestfruit_manhattan_dist)
                      + (2 * player_quarter_is_best) - (1.5 * rival_quarter_is_best) + (0.01 * moves_avg_value)
                      + (1 * player_moves_with_fruits_points) #- (1 * rival_moves_with_fruits_points)
                      + (0.1 * player_location_score) - (0.1 * rival_location_score))
         else:
             value = (3 * player_moves_number) - (1 * rival_moves_number) \
-                    + (len(blocking_moves)) + (2 * len(successor_available_moves) + 0.01 * state.points)
+                    + (len(blocking_moves)) + (2 * len(successor_available_moves) + 0.1 * state.points)
 
     #    if total_free_cells / board_size <= 0.5:
     #        if state.fruit_life_time > 0:
