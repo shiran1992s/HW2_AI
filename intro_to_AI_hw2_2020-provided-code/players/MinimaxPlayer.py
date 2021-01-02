@@ -259,7 +259,7 @@ class Player(AbstractPlayer):
         depth_limit_from_current_state = get_free_cells_num(current_game_state)
 
         begin_update_time = time.time()
-        self.location = current_game_state.location
+        self.location = current_game_state.location # ?
         end_update_time = time.time()
         total_update_time = end_update_time - begin_update_time
 
@@ -298,7 +298,7 @@ class Player(AbstractPlayer):
             if total_time + next_it_time + total_update_time >= time_limit or depth > board_size:
                 break
             best_move_chosen = max(result_values, key=result_values.get)
-            print(f'\n\n\nIn Depth = {depth} ,maximizing_player={True},\n'
+            # print(f'\n\n\nIn Depth = {depth} ,maximizing_player={True},\n'
                   f'minmaxValue:{result_values} and the best move chosen is:{best_move_chosen}\n\n\n')
 
         current_game_state.make_move(best_move_chosen, True)

@@ -3,6 +3,7 @@
 from utils import ALPHA_VALUE_INIT, BETA_VALUE_INIT
 # TODO: you can import more modules, if needed
 import numpy as np
+import copy as copy
 
 from players import MinimaxPlayer
 from players import AlphabetaPlayer
@@ -59,7 +60,7 @@ class MiniMax(SearchAlgos):
         for move in available_moves:
             # print(f'In Depth = {depth} ,maximizing_player={maximizing_player}, player making move:{move}\n')
             state.make_move(move, maximizing_player)
-            move_value = self.search(state, depth - 1, not maximizing_player)
+            move_value = self.search(copy.deepcopy(state), depth - 1, not maximizing_player)
             state.undo_move(move, maximizing_player)
             # print(f'In Depth = {depth} ,maximizing_player={maximizing_player}, player undoing move:{move}\n')
             if maximizing_player and max_result < move_value[0]:
