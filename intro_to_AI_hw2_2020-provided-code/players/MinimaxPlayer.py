@@ -320,8 +320,8 @@ class Player(AbstractPlayer):
             # print(f'\n\n\nPlayer = {self.name}, In Depth = {depth} ,maximizing_player={True},\n'
             #       f'minmaxValue:{result_values} and the best move chosen is:{best_move_chosen}\n\n\n')
 
-        # print(f'Player = {self.name},before sync:\nlocation={self.location},'
-        #       f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
+        print(f'Player = {self.name},before sync:\nlocation={self.location},'
+              f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
         # print(f'Player = {self.name},before making move:\nlocation={current_game_state.location},'
         #       f'points:{current_game_state.points}, fruit_life_time={current_game_state.fruit_life_time},fruit_locations={current_game_state.fruit_locations}\n\n\n')
         current_game_state.make_move(best_move_chosen, True)
@@ -330,8 +330,8 @@ class Player(AbstractPlayer):
         sync_objects(self, current_game_state.game_board, current_game_state.location, current_game_state.points, current_game_state.fruit_life_time,
                      current_game_state.fruit_locations, current_game_state.best_fruit_location, current_game_state.best_fruit_value)
 
-        # print(f'Player = {self.name},after sync:\nlocation={self.location},'
-        #       f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
+        print(f'Player = {self.name},after sync:\nlocation={self.location},'
+              f'points:{self.points},rival_points:{self.rival_points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
         # if self.fruits_in_game:
         #     if self.fruit_life_time > 0:
         #         self.fruit_life_time -= 1
