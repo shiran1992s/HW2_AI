@@ -215,9 +215,6 @@ class Player(AbstractPlayer):
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
 
-
-
-
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -259,7 +256,6 @@ class Player(AbstractPlayer):
             # print(f'fruit_life_time={self.fruit_life_time}\n\n')
         else:
             self.fruit_life_time = 0
-
 
     def make_move(self, time_limit, players_score):
         """Make move with this Player.

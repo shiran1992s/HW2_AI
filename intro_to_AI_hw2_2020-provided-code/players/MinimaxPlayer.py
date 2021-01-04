@@ -215,9 +215,6 @@ class Player(AbstractPlayer):
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.MiniMax(self.utility, None, self.make_move, self.is_goal)
 
-
-
-
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -287,8 +284,8 @@ class Player(AbstractPlayer):
         total_update_time = end_update_time - begin_update_time
 
         while True:  # Do while
-            result_values = dict()
             start_it_time = time.time()
+            result_values = dict()
             depth += 1
             # print(depth)
             if depth > depth_limit_from_current_state:
@@ -318,7 +315,7 @@ class Player(AbstractPlayer):
             #     break
             # if depth == 8:*
             #     break
-            if total_time + next_it_time + total_update_time >= time_limit/(board_size/2) or depth > board_size:
+            if total_time + next_it_time + total_update_time >= time_limit or depth > board_size:
                 break
             best_move_chosen = max(result_values, key=result_values.get)
             # print(f'\n\n\nPlayer = {self.name}, In Depth = {depth} ,maximizing_player={True},\n'
@@ -342,58 +339,6 @@ class Player(AbstractPlayer):
         #         if self.fruit_life_time == 0:
         #             self.fruits_life_ended(self.fruit_locations)
         return best_move_chosen
-
-    # def make_move(self, time_limit, players_score):
-    #     """Make move with this Player.
-    #     input:
-    #         - time_limit: float, time limit for a single turn.
-    #     output:
-    #         - direction: tuple, specifing the Player's movement, chosen from self.directions
-    #     """
-    #     # TODO: erase the following line and implement this function.
-    #     start_time = time.time()
-    #     num_of_rows = len(self.game_board)
-    #     num_of_cols = len(self.game_board[0])
-    #     board_size = num_of_rows * num_of_cols
-    #     depth = 0
-    #     current_game_state = GameState(self.game_board, self.location, self.rival_location, self)
-    #     available_moves = get_moves_from_location(current_game_state, True)
-    #     move = None
-    #     # depth_limit_from_current_state = self.(self.)
-    #
-    #     begin_update_time = time.time()
-    #     self.location = current_game_state.location
-    #     end_update_time = time.time()
-    #     total_update_time = end_update_time - begin_update_time
-    #
-    #     while True:  # Do while
-    #         # result_values = []
-    #         start_it_time = time.time()
-    #         depth += 1
-    #         if depth != 1:
-    #             current_game_state.undo_move(move, True)
-    #
-    #         move_minimax_value, move = self.search_algos.search(current_game_state, depth, True)
-    #         if move is None:
-    #             exit()
-    #         current_game_state.make_move(move, True)
-    #
-    #         it_time = time.time() - start_it_time
-    #         if depth == 1:
-    #             first_it_time = it_time
-    #         next_it_time = first_it_time + 4 * it_time  # Im not sure that this is the right calculation (5)
-    #         total_time = time.time() - start_time
-    #         # if depth > 4:
-    #         #     break
-    #         if total_time + next_it_time + total_update_time >= time_limit or depth == board_size:
-    #             break
-
-        # self.location = current_game_state.location
-        # if self.fruit_life_time > 0:
-        #     self.fruit_life_time -= 1
-        #     if self.fruit_life_time == 0:
-        #         self.update_fruits(self.fruit_locations)
-        # return move
 
     def set_rival_move(self, pos):
         """Update your info, given the new position of the rival.

@@ -215,9 +215,6 @@ class Player(AbstractPlayer):
         # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
 
-
-
-
     def set_game_params(self, board):
         """Set the game parameters needed for this player.
         This function is called before the game starts.
@@ -270,7 +267,6 @@ class Player(AbstractPlayer):
         # TODO: erase the following line and implement this function.
         # raise NotImplementedError
         start_time = time.time()
-
 
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
