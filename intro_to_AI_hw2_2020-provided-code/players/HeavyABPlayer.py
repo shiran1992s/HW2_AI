@@ -2,13 +2,14 @@
 MiniMax Player with AlphaBeta pruning with heavy heuristic
 """
 from players.AbstractPlayer import AbstractPlayer
-# TODO: you can import more modules, if needed
+# DONE: you can import more modules, if needed
 import time
 import utils
 import SearchAlgos
 import copy
 
-# TODO: Check if need instance of player and handle fruits
+# DONE: Check if need instance of player and handle fruits
+
 
 class FruitsState:
     fruit_locations = None
@@ -42,10 +43,8 @@ class GameState:
     fruits_state = []
     fruits_initial_state = None
 
-
     def __init__(self, game_board, location, rival_location, fruit_life_time, penalty_score, rival_points, points,
                  fruit_locations, best_fruit_value, best_fruit_location, fruits_concentration, fruits_in_game):
-        # self.player = player
         self.game_board = copy.deepcopy(game_board)
         self.location = copy.deepcopy(location)
         self.rival_location = copy.deepcopy(rival_location)
@@ -63,11 +62,6 @@ class GameState:
             self.fruits_concentration = copy.deepcopy(fruits_concentration)
             self.fruits_initial_state = FruitsState(self.fruit_locations, self.best_fruit_value
                                                     , self.best_fruit_location, self.fruits_concentration)
-        # for row_index, row_value in enumerate(game_board): #TODO: IF NOT USED REMOVE FRUITS_LIFE_TIME
-        #     for cell_index, cell_value in enumerate(row_value):
-        #         if cell_value > 2:
-        #             location = (row_index, cell_index)
-        #             self.fruits_location.update({location: cell_value})
 
     def make_move(self, move, maximizing_player):
         if maximizing_player:
@@ -88,21 +82,18 @@ class GameState:
             self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
 
         if self.fruits_in_game:
-            # if self.fruit_life_time > 0:
-                self.fruit_life_time -= 1
-                if self.fruit_life_time == 0:
-                    self.fruits_state.append(FruitsState(self.fruit_locations, self.best_fruit_value
-                                                         , self.best_fruit_location, self.fruits_concentration))
-                    self.update_fruits(self.fruit_locations)
+            self.fruit_life_time -= 1
+            if self.fruit_life_time == 0:
+                self.fruits_state.append(FruitsState(self.fruit_locations, self.best_fruit_value
+                                                     , self.best_fruit_location, self.fruits_concentration))
+                self.update_fruits(self.fruit_locations)
 
     def undo_move(self, move, maximizing_player):
-
         if self.fruits_in_game:
             if self.fruit_life_time == 0:
                 self.fruit_life_time += 1
                 if self.fruits_state is not None and len(self.fruits_state) > 0:
                     self.restore_fruits(self.fruits_state.pop())
-            # elif self.fruit_life_time > 0:
             else:
                 self.fruit_life_time += 1
 
@@ -124,12 +115,8 @@ class GameState:
             self.rival_location = (self.rival_location[0] - move[0], self.rival_location[1] - move[1])
             self.game_board[self.rival_location[0]][self.rival_location[1]] = 2
 
-
     def eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
-            # print(f'before eat fruit:\nposition={position},'
-            #       f'points:{self.points},rival_points={self.rival_points},'
-            #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
             self.fruit_locations.pop(position)
             update_fruits_concentration(self, position, "MINUS")
             if cell_value == self.best_fruit_value:
@@ -138,15 +125,9 @@ class GameState:
                 self.points += cell_value
             else:
                 self.rival_points += cell_value
-            # print(f'after eat fruit:\nposition={position},'
-            #       f'points:{self.points},rival_points={self.rival_points},'
-            #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
 
     def cancel_eat_fruit(self, cell_value, position, maximizing_player):
         if cell_value > 2:
-            # print(f'before cancel eat fruit:\nposition={position},'
-            #       f'points:{self.points},rival_points={self.rival_points},'
-            #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
             self.fruit_locations.update({position: cell_value})
             update_fruits_concentration(self, position, "PLUS")
             if cell_value > self.best_fruit_value:
@@ -155,43 +136,34 @@ class GameState:
                 self.points -= cell_value
             else:
                 self.rival_points -= cell_value
-            # print(f'after cancel eat fruit:\nposition={position},'
-            #       f'points:{self.points},rival_points={self.rival_points},'
-            #       f' cell_value={cell_value},fruit_locations={self.fruit_locations}\n\n\n')
 
     def update_fruits(self, fruits_on_board_dict):
-
-        if fruits_on_board_dict is not None: #and len(fruits_on_board_dict) > 0
-            # print(f'in update_fruits: fruit_locations={self.fruit_locations}\n\n\n')
+        if fruits_on_board_dict is not None:
             fruit_positions = fruits_on_board_dict.keys()
             for pos in fruit_positions:
                 if self.game_board[pos[0], pos[1]] > 2:
                     self.game_board[pos[0], pos[1]] = 0
-            # print(f'after update_fruits: game_board={self.game_board}\n\n\n')
             self.fruit_locations = dict()
             self.best_fruit_location = None
             self.best_fruit_value = float("-inf")
 
     def restore_fruits(self, fruit_state):
         if fruit_state is not None:
-            # print(f'in restore_fruits: fruit_locations={self.fruit_locations}\n\n\n')
             self.fruit_locations = fruit_state.fruit_locations
             self.best_fruit_location = fruit_state.best_fruit_location
             self.best_fruit_value = fruit_state.best_fruit_value
             self.fruits_concentration = fruit_state.fruits_concentration
-            # print(f'after restore_fruits: fruit_locations={self.fruit_locations}\n\n\n')
         if self.fruit_locations is not None and len(self.fruit_locations) > 0:
             fruit_positions = self.fruit_locations.keys()
             for pos in fruit_positions:
                 if self.game_board[pos[0], pos[1]] == 0:
                     self.game_board[pos[0], pos[1]] = self.fruit_locations[pos]
-        # print(f'after restore_fruits: game_board={self.game_board}\n\n\n')
 
 
 class Player(AbstractPlayer):
     def __init__(self, game_time, penalty_score):
         AbstractPlayer.__init__(self, game_time, penalty_score) # keep the inheritance of the parent's (AbstractPlayer) __init__()
-        #TODO: initialize more fields, if needed, and the Minimax algorithm from SearchAlgos.py
+        # DONE: initialize more fields, if needed, and the Minimax algorithm from SearchAlgos.py
         self.penalty_score = penalty_score
         self.name = "HeavyAlphaBeta"
         self.location = None
@@ -212,7 +184,6 @@ class Player(AbstractPlayer):
         self.rival_moves_available_count = 0
         self.min_dimention = None
         self.fruits_concentration = None
-        # self.init_concentration_dict()
         self.search_algos = SearchAlgos.AlphaBeta(self.utility, None, self.make_move, self.is_goal)
 
     def set_game_params(self, board):
@@ -223,37 +194,29 @@ class Player(AbstractPlayer):
             - board: np.array, a 2D matrix of the board.
         No output is expected.
         """
-        # TODO: erase the following line and implement this function.
-
-        # TODO: Check if need to update the fruit locations in here or only players.
+        # DONE: erase the following line and implement this function.
+        # DONE: Check if need to update the fruit locations in here or only players.
         self.game_board = board
         init_concentration_dict(self)
         number_of_rows = len(board)
         number_of_cols = len(board[0])
         self.min_dimention = number_of_rows if number_of_rows <= number_of_cols else number_of_cols
-        # number_of_players = 2
         for row_index, row_value in enumerate(board):
             for cell_index, cell_value in enumerate(row_value):
                 if cell_value == 1:
                     self.location = (row_index, cell_index)
-                    # number_of_players -= 1
                 if cell_value == 2:
                     self.rival_location = (row_index, cell_index)
-                    # number_of_players -= 1
-                # if number_of_players is 0:
-                #     break
                 if cell_value > 2:
                     self.fruits_in_game = True
                     location = (row_index, cell_index)
                     self.fruit_locations.update({location: cell_value})
                     update_fruits_concentration(self, location, "PLUS")
-                    # self.fruit_life_time.update({location: self.min_dimention}) #TODO: IF NOT USED REMOVE FRUITS_LIFE_TIME
                     if cell_value > self.best_fruit_value:
                         self.best_fruit_value = cell_value
                         self.best_fruit_location = (row_index, cell_index)
         if self.fruits_in_game:
             self.fruit_life_time = self.min_dimention * 2
-            # print(f'fruit_life_time={self.fruit_life_time}\n\n')
         else:
             self.fruit_life_time = 0
 
@@ -264,59 +227,34 @@ class Player(AbstractPlayer):
         output:
             - direction: tuple, specifing the Player's movement, chosen from self.directions
         """
-        # TODO: erase the following line and implement this function.
-        # raise NotImplementedError
-        start_time = time.time()
-
-
+        # DONE: erase the following line and implement this function.
         num_of_rows = len(self.game_board)
         num_of_cols = len(self.game_board[0])
         board_size = num_of_rows * num_of_cols
         depth = 2
         current_game_state = GameState(self.game_board, self.location, self.rival_location, self.fruit_life_time,
                                        self.penalty_score, self.rival_points, self.points, self.fruit_locations,
-                                       self.best_fruit_value, self.best_fruit_location, self.fruits_concentration)
+                                       self.best_fruit_value, self.best_fruit_location, self.fruits_concentration,
+                                       self.fruits_in_game)
         available_moves = get_moves_from_location(current_game_state, True)
         best_move_chosen = available_moves[0]
-        depth_limit_from_current_state = get_free_cells_num(current_game_state)
 
         result_values = dict()
-        start_it_time = time.time()
-
-        # print(f'In Depth = {depth} ,maximizing_player={True}, available_moves:{available_moves}\n\n\n')
         for move in available_moves:
             if move is None:
                 exit()
-            # print(f'In Depth = {depth} ,maximizing_player={True}, player making move:{move}\n')
             current_game_state.make_move(move, True)
             depth -= 1
             move_minimax_value, move_2 = self.search_algos.search(copy.deepcopy(current_game_state), depth, False)
-
             result_values.update({move: move_minimax_value})
             current_game_state.undo_move(move, True)
             depth += 1
-            # print(f'In Depth = {depth} ,maximizing_player={True}, player undoing move:{move}\n')
-        # it_time = time.time() - start_it_time
-        # if depth == 1:
-        #     first_it_time = it_time
-        # next_it_time = first_it_time + 4 * it_time
-        # total_time = time.time() - start_time
         best_move_chosen = max(result_values, key=result_values.get)
-            # print(f'\n\n\nPlayer = {self.name}, In Depth = {depth} ,maximizing_player={True},\n'
-            #       f'minmaxValue:{result_values} and the best move chosen is:{best_move_chosen}\n\n\n')
-
-        # print(f'Player = {self.name},before sync:\nlocation={self.location},'
-        #       f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
-        # print(f'Player = {self.name},before making move:\nlocation={current_game_state.location},'
-        #       f'points:{current_game_state.points}, fruit_life_time={current_game_state.fruit_life_time},fruit_locations={current_game_state.fruit_locations}\n\n\n')
         current_game_state.make_move(best_move_chosen, True)
-        # print(f'Player = {self.name},after making move:\nlocation={current_game_state.location},'
-        #       f'points:{current_game_state.points}, fruit_life_time={current_game_state.fruit_life_time},fruit_locations={current_game_state.fruit_locations}\n\n\n')
         sync_objects(self,current_game_state.game_board, current_game_state.location, current_game_state.points, current_game_state.fruit_life_time,
                      current_game_state.fruit_locations, current_game_state.best_fruit_location,
                      current_game_state.best_fruit_value)
-        # print(f'Player = {self.name},after sync:\nlocation={self.location},'
-        #       f'points:{self.points}, fruit_life_time={self.fruit_life_time},fruit_locations={self.fruit_locations}\n\n\n')
+
         return best_move_chosen
 
     def set_rival_move(self, pos):
@@ -325,20 +263,13 @@ class Player(AbstractPlayer):
             - pos: tuple, the new position of the rival.
         No output is expected
         """
-        # TODO: erase the following line and implement this function.
-        print(f'Player= {self.name} updating rival move\n')
-        # raise NotImplementedError
+        # DONE: erase the following line and implement this function.
         self.game_board[self.rival_location[0]][self.rival_location[1]] = -1
         cell_value = self.game_board[pos[0]][pos[1]]
         if cell_value > 2:
             if self.fruit_life_time > 0:
                 self.rival_points += cell_value
-                # print(f'pos=({pos[0]}{pos[1]})\n\
-                #                         fruit_life_time = {self.fruit_life_time}\n'
-                #       f' fruit_locations={self.fruit_locations}\n')  # TODO: remove!!
                 self.fruit_locations.pop(pos)
-                # print(f'fruit_life_time = {self.fruit_life_time}\n'
-                #       f' fruit_locations={self.fruit_locations}\n')
                 update_fruits_concentration(self, pos, "MINUS")
                 if pos == self.best_fruit_location:
                     find_best_fruit(self)
@@ -348,8 +279,6 @@ class Player(AbstractPlayer):
             self.fruit_life_time -= 1
             if self.fruit_life_time == 0:
                 self.fruits_life_ended(self.fruit_locations)
-            # print(f'fruit_life_time = {self.fruit_life_time}\n'
-            #       f' fruit_locations={self.fruit_locations}\n')
 
     def update_fruits(self, fruits_on_board_dict):
         """Update your info on the current fruits on board (if needed).
@@ -359,7 +288,7 @@ class Player(AbstractPlayer):
                                     'value' is the value of this fruit.
         No output is expected.
         """
-        # TODO: erase the following line and implement this function. In case you choose not to use this function,
+        # DONE: erase the following line and implement this function. In case you choose not to use this function,
         # use 'pass' instead of the following line.
         # raise NotImplementedError
         # self.fruit_locations = dict(fruits_on_board_dict)
@@ -376,7 +305,7 @@ class Player(AbstractPlayer):
             self.best_fruit_value = float("-inf")
 
     ########## helper functions in class ##########
-    # TODO: add here helper functions in class, if needed
+    # DONE: add here helper functions in class, if needed
 
     def utility(self, current_state):
         self_moves_tuple, rival_moves_tuple = available_moves_handler(current_state, current_state.location,
@@ -384,29 +313,23 @@ class Player(AbstractPlayer):
         if self_moves_tuple[1] == 0 or rival_moves_tuple[1] == 0:
             if self_moves_tuple[1] > 0:
                 if current_state.points > current_state.rival_points - current_state.penalty_score:
-                    return 10000 + current_state.points
-                    # return float("inf")
+                    return float("inf")
                 elif current_state.points < current_state.rival_points - current_state.penalty_score:
-                    return -10000 - current_state.rival_points
-                    # return float("-inf")
+                    return float("-inf")
                 else:
                     return 0
             elif rival_moves_tuple[1] > 0:
                 if current_state.points - current_state.penalty_score > current_state.rival_points:
-                    return 10000 + current_state.points
-                    # return float("inf")
+                    return float("inf")
                 elif current_state.points - current_state.penalty_score < current_state.rival_points:
-                    return -10000 - current_state.rival_points
-                    # return float("-inf")
+                    return float("-inf")
                 else:
                     return 0
             else:
                 if current_state.points - current_state.penalty_score > current_state.rival_points - current_state.penalty_score:
-                    return 10000 + current_state.points
-                    # return float("inf")
+                    return float("inf")
                 elif current_state.points - current_state.penalty_score < current_state.rival_points - current_state.penalty_score:
-                    return -10000 - current_state.rival_points
-                    # return float("-inf")
+                    return float("-inf")
                 else:
                     return 0
         return 0
@@ -441,7 +364,7 @@ class Player(AbstractPlayer):
         return False
 
     ########## helper functions for AlphaBeta algorithm ##########
-    # TODO: add here the utility, succ, and perform_move functions used in AlphaBeta algorithm
+    # DONE: add here the utility, succ, and perform_move functions used in AlphaBeta algorithm
 
 
 def state_score(board, pos):
@@ -733,7 +656,6 @@ def sync_objects(first_object, game_board, location, points, fruit_life_time, fr
     first_object.game_board = copy.deepcopy(game_board)
     first_object.points = copy.deepcopy(points)
     first_object.fruit_life_time = copy.deepcopy(fruit_life_time)
-    # if fruit_locations is not None and len(fruit_locations) >= 0:
     first_object.fruit_locations = copy.deepcopy(fruit_locations)
     first_object.best_fruit_value = copy.deepcopy(best_fruit_value)
     first_object.best_fruit_location = copy.deepcopy(best_fruit_location)
